@@ -1,0 +1,42 @@
+/* _typography.scss */
+
+/* _typography mixins */
+
+@mixin font-size($size: 16px) {
+  $rem: #{$size / 16px}rem;
+  font-size: $size;
+  font-size: $rem;
+}
+
+@mixin font-base-attributes($size, $weight, $style) {
+  @include font-size($size);
+  font-weight: $weight;
+
+  @if $style != normal { font-style: $style; }
+}
+
+@mixin base-font($size: 16px, $weight: inherit, $style: normal) {
+  @include font-base-attributes($size, $weight, $style);
+  font-family: 'Helvetica', sans-serif;
+}
+
+/* _typography bp-small */
+
+/* _typography bp-medium */
+
+@mixin _typography-medium {
+
+}
+
+/* _typography bp-medium-large */
+
+@mixin _typography-medium-large {
+
+}
+
+/* _typography bp-large */
+
+@mixin _typography-large {
+
+}
+

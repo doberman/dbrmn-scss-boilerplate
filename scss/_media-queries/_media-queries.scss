@@ -1,0 +1,44 @@
+/* _media-queries.scss */
+
+@mixin bp-medium-content {
+  @include _typography-medium;
+
+  /* _grid module */
+  @include _grid-medium;
+
+  @include __template-medium;
+}
+
+@mixin bp-medium-large-content {
+  @include _typography-medium-large;
+
+  /* _grid module */
+  @include _grid-medium;
+  @include _grid-medium-large;
+
+  @include __template-medium-large;
+}
+
+@mixin bp-large-content {
+  @include _typography-large;
+
+  /* _grid module */
+  @include _grid-medium;
+  @include _grid-medium-large;
+  @include _grid-large;
+
+  @include __template-large;
+}
+
+@media #{$bp-medium} {
+  @include bp-medium-content;
+}
+
+@media #{$bp-medium-large} {
+  @include bp-medium-large-content;
+}
+
+@media #{$bp-large} {
+  @include bp-large-content;
+}
+

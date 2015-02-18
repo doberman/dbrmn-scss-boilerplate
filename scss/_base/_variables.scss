@@ -1,0 +1,23 @@
+/* _variables.scss */
+
+/* Base */
+
+$base-unit: 10px;
+$site-max-width: 1240px;
+
+/* Breakpoints */
+
+$bp-medium: '(min-width: 550px)';
+$bp-medium-large: '(min-width: 551px) and (max-width: 1000px)';
+$bp-large: '(min-width: 1001px)';
+
+/* Colors */
+
+$color-white: #fff;
+$color-black: #000;
+$color-typography-base: $color-black;
+
+/* Easings */
+
+$ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.150, 0.860);
+$ease-default: $ease-in-out-circ;

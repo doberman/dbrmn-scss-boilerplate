@@ -1,0 +1,97 @@
+/* _grid.scss */
+
+/* _grid config */
+
+$grid-cols: 12;
+$grid-col-padding: 15px;
+
+/* _grid base */
+
+.container-fluid { width: 100%; }
+
+.container {
+  max-width: $site-max-width;
+  margin: 0 auto;
+}
+
+.row {
+  @include clearfix-overflow-visible;
+  margin-left: -$grid-col-padding;
+  margin-right: -$grid-col-padding;
+}
+
+.col {
+  padding-top: 0;
+  padding-right: $grid-col-padding;
+  padding-bottom: 0;
+  padding-left: $grid-col-padding;
+}
+
+.col-opposite { float: right; }
+
+@for $i from 1 through $grid-cols {
+  .col-#{$i},
+  .col-xs-#{$i} {
+    float: left;
+    width: (100% / $grid-cols) * $i;
+    padding: 0 $grid-col-padding;
+  }
+}
+
+.hide-sm,
+.hide-sm-inline { display: none; }
+
+/* _grid states and modifiers */
+
+/* _grid bp-medium */
+
+@mixin _grid-medium {
+  .hide-sm { display: block; }
+
+  .hide-sm-inline { display: inline; }
+
+  .hide-md,
+  .hide-lg { display: none; }
+
+  .container { padding: 0 $base-unit * 2; }
+
+  @for $i from 1 through $grid-cols {
+    .col-sm-#{$i} {
+      float: left;
+      width: (100% / $grid-cols) * $i;
+    }
+  }
+}
+
+/* _grid bp-medium-large */
+
+@mixin _grid-medium-large {
+  .hide-sm { display: block; }
+
+  .hide-sm-inline { display: inline; }
+
+  @for $i from 1 through $grid-cols {
+    .col-md-#{$i} {
+      float: left;
+      width: (100% / $grid-cols) * $i;
+    }
+  }
+}
+
+/* _grid bp-large */
+
+@mixin _grid-large {
+  .hide-sm { display: block; }
+
+  .hide-sm-inline { display: inline; }
+
+  .hide-md,
+  .hide-lg { display: none; }
+
+  @for $i from 1 through $grid-cols {
+    .col-lg-#{$i} {
+      float: left;
+      width: (100% / $grid-cols) * $i;
+    }
+  }
+}
