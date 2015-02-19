@@ -4,24 +4,24 @@ $is-lt-ie9: false;
 
 /* _mixins */
 
-@import "scss/_helpers/_mixins.scss";
+@import "scss/_helpers/mixins.scss";
 
 /* _vendor */
 
 /* _base */
 
-@import "scss/_base/_variables.scss";
-@import "scss/_base/_normalize.scss";
-@import "scss/_base/_typography.scss";
-@import "scss/_base/_base.scss";
+@import "scss/_base/variables.scss";
+@import "scss/_base/normalize.scss";
+@import "scss/_base/typography.scss";
+@import "scss/_base/base.scss";
 
 /* _grid */
 
-@import "scss/_modules/_grid.scss";
+@import "scss/_modules/grid.scss";
 
 /* _utils */
 
-@import "scss/_helpers/_utils.scss";
+@import "scss/_helpers/utils.scss";
 
 /* _modules */
 
@@ -29,4 +29,4 @@ $is-lt-ie9: false;
 
 /* _media-queries */
 
-@import "scss/_media-queries/_media-queries.scss";
+@import "scss/_media-queries/media-queries.scss";
