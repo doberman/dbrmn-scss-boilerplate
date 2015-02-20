@@ -5,8 +5,6 @@
 
   /* _grid module */
   @include _grid-medium;
-
-  @include __template-medium;
 }
 
 @mixin bp-medium-large-content {
@@ -15,8 +13,6 @@
   /* _grid module */
   @include _grid-medium;
   @include _grid-medium-large;
-
-  @include __template-medium-large;
 }
 
 @mixin bp-large-content {
@@ -26,8 +22,6 @@
   @include _grid-medium;
   @include _grid-medium-large;
   @include _grid-large;
-
-  @include __template-large;
 }
 
 @media #{$bp-medium} {
