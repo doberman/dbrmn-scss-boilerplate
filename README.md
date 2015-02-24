@@ -10,6 +10,6 @@ In your new SCSS file, simply find and replace the string "template" with the na
 
 Then:
 
-- Include the media query related mixins (e.g. `_template-medium`) in
-scss/\_media-queries/\_media-queries.scss.
+- Include the media query related mixins (e.g. `template-medium`) in
+scss/\media-queries/\media-queries.scss.
 - Import your SCSS file in scss/style.scss.
