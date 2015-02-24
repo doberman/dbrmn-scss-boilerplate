@@ -2,27 +2,27 @@
 
 /* _mixins */
 
-@import "scss/_helpers/mixins.scss";
+@import "scss/helpers/mixins.scss";
 
 /* _vendor */
 
 /* _base */
 
-@import "scss/_base/variables.scss";
-@import "scss/_base/normalize.scss";
-@import "scss/_base/typography.scss";
-@import "scss/_base/base.scss";
+@import "scss/base/variables.scss";
+@import "scss/base/normalize.scss";
+@import "scss/base/typography.scss";
+@import "scss/base/base.scss";
 
 /* _grid */
 
-@import "scss/_modules/grid.scss";
+@import "scss/modules/grid.scss";
 
 /* _utils */
 
-@import "scss/_helpers/utils.scss";
+@import "scss/helpers/utils.scss";
 
 /* _modules */
 
 /* _media-queries */
 
-@import "scss/_media-queries/media-queries.scss";
+@import "scss/media-queries/media-queries.scss";
