@@ -3,11 +3,6 @@
 Base framework to use for to use for projects using
 [SCSS](http://sass-lang.com/).
 
-#TODO: Link to generator-doberman
-
-#TODO: Examples 
-
-
 ## Usage
 
 When creating a new SCSS module, use scss/__template.scss as a base.
