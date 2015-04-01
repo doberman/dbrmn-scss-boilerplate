@@ -13,3 +13,7 @@ Then:
 - Include the media query related mixins (e.g. `template-medium`) in
 scss/media-queries/media-queries.scss.
 - Import your SCSS file in scss/style.scss.
+
+## License
+
+Licensed under the new BSD 3-clause license. See the separate LICENSE file.
