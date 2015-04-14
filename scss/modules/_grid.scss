@@ -31,7 +31,7 @@ $grid-col-padding: 15px;
 
 @for $i from 1 through $grid-cols {
   .col-#{$i},
-  .col-xs-#{$i} {
+  .col-sm-#{$i} {
     float: left;
     width: (100% / $grid-cols) * $i;
     padding: 0 $grid-col-padding;
@@ -43,32 +43,12 @@ $grid-col-padding: 15px;
 
 /* _grid states and modifiers */
 
-/* _grid bp-medium */
+/* _grid medium */
 
 @mixin _grid-medium {
-  .hide-sm { display: block; }
-
-  .hide-sm-inline { display: inline; }
-
-  .hide-md,
-  .hide-lg { display: none; }
+  .hide-md { display: none; }
 
   .container { padding: 0 $base-unit * 2; }
-
-  @for $i from 1 through $grid-cols {
-    .col-sm-#{$i} {
-      float: left;
-      width: (100% / $grid-cols) * $i;
-    }
-  }
-}
-
-/* _grid bp-medium-large */
-
-@mixin _grid-medium-large {
-  .hide-sm { display: block; }
-
-  .hide-sm-inline { display: inline; }
 
   @for $i from 1 through $grid-cols {
     .col-md-#{$i} {
@@ -78,14 +58,21 @@ $grid-col-padding: 15px;
   }
 }
 
-/* _grid bp-large */
+/* _grid medium-and-above */
 
-@mixin _grid-large {
+@mixin _grid-medium-and-above {
   .hide-sm { display: block; }
 
-  .hide-sm-inline { display: inline; }
+  .hide-md-lg { display: none; }
 
-  .hide-md,
+  .hide-sm-inline { display: inline; }
+}
+
+/* _grid large */
+
+@mixin _grid-large {
+  .hide-md { display: block; }
+
   .hide-lg { display: none; }
 
   @for $i from 1 through $grid-cols {

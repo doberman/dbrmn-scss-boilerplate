@@ -7,8 +7,8 @@ $site-max-width: 1240px;
 
 /* Breakpoints */
 
-$bp-medium: '(min-width: 550px)';
-$bp-medium-large: '(min-width: 551px) and (max-width: 1000px)';
+$bp-medium: '(min-width: 550px) and (max-width: 1000px)';
+$bp-medium-and-above: '(min-width: 550px)';
 $bp-large: '(min-width: 1001px)';
 
 /* Colors */
