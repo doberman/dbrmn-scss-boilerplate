@@ -7,8 +7,11 @@ html {
 }
 
 body {
-  @include box-sizing(border-box);
   color: $color-typography-base;
+}
+
+* {
+  @include box-sizing(border-box);
 }
 
 *, *:before, *:after {
