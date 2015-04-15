@@ -20,21 +20,21 @@
   font-family: 'Helvetica', sans-serif;
 }
 
-/* _typography bp-small */
+/* _typography small */
 
-/* _typography bp-medium */
+/* _typography medium */
 
 @mixin _typography-medium {
 
 }
 
-/* _typography bp-medium-large */
+/* _typography medium-and-above */
 
-@mixin _typography-medium-large {
+@mixin _typography-medium-and-above {
 
 }
 
-/* _typography bp-large */
+/* _typography large */
 
 @mixin _typography-large {
 
