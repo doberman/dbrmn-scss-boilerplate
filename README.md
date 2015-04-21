@@ -1,7 +1,6 @@
 # dbrmn-scss-framework
 
-Base framework to use for to use for projects using
-[SCSS](http://sass-lang.com/).
+Base framework for projects using [SCSS](http://sass-lang.com/).
 
 ## Usage
 
