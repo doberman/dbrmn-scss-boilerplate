@@ -22,21 +22,25 @@
 
 /* _typography small */
 
+@include layout-default {
+
+}
+
 /* _typography medium */
 
-@mixin _typography-medium {
+@include layout-medium {
 
 }
 
 /* _typography medium-and-above */
 
-@mixin _typography-medium-and-above {
+@include layout-medium-and-above {
 
 }
 
 /* _typography large */
 
-@mixin _typography-large {
+@include layout-large {
 
 }
 

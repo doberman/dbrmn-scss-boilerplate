@@ -9,11 +9,7 @@ When creating a new SCSS module, use scss/__template.scss as a base.
 
 In your new SCSS file, simply find and replace the string "template" with the name of the new module.
 
-Then:
-
-- Include the media query related mixins (e.g. `template-medium`) in
-scss/media-queries/media-queries.scss.
-- Import your SCSS file in scss/style.scss.
+Then import your SCSS file in scss/_all.scss.
 
 ## Contributing
 
