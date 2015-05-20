@@ -1,53 +1,57 @@
 /* _base.scss */
 
-html {
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -webkit-font-smoothing: antialiased;
-}
+@include layout-default {
 
-body {
-  color: $color-typography-base;
-}
-
-* {
-  @include box-sizing(border-box);
-}
-
-*, *:before, *:after {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-*:before, *:after {
-  @include box-sizing(inherit);
-}
-
-ul, ol {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  text-decoration: none;
-}
-
-h1, h2, h3, h4, h5, p {
-  margin: 0;
-}
-
-input, textarea, button {
-  -webkit-font-smoothing: inherit;
-  border: none;
-  padding: 0;
-
-  &:focus {
-    outline: none;
+  html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
   }
-}
 
-fieldset {
-  border: none;
-  padding: 0;
-  margin: 0;
+  body {
+    color: $color-typography-base;
+  }
+
+  * {
+    @include box-sizing(border-box);
+  }
+
+  *, *:before, *:after {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
+  *:before, *:after {
+    @include box-sizing(inherit);
+  }
+
+  ul, ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  h1, h2, h3, h4, h5, p {
+    margin: 0;
+  }
+
+  input, textarea, button {
+    -webkit-font-smoothing: inherit;
+    border: none;
+    padding: 0;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
 }

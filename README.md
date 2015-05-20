@@ -4,15 +4,13 @@ Base framework for projects using [SCSS](http://sass-lang.com/).
 
 ## Usage
 
-When creating a new SCSS module, use scss/__template.scss as a base.
+When creating a new SCSS module, use `scss/__template.scss` as a base.
 
 In your new SCSS file, simply find and replace the string "template" with the name of the new module.
 
-Then:
+Then import your SCSS file in `scss/_all.scss`.
 
-- Include the media query related mixins (e.g. `template-medium`) in
-scss/media-queries/media-queries.scss.
-- Import your SCSS file in scss/style.scss.
+The file `should-be-empty.scss` is a verification tool that, when all styles are correctly placed inside `layout-*` mixins, should compile to an empty CSS file. Note that this file is only for verifying that the scss is written correctly and should not be included in a deploy or delivery.
 
 ## Contributing
 
