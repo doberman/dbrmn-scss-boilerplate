@@ -1,5 +1,7 @@
 /* _mixins.scss */
 
+@import '../vendor/triangle-mixin';
+
 @mixin clearfix { overflow: hidden; }
 
 /* Let's not even care about IE6/7, http://www.cssmojo.com/latest_new_clearfix_so_far/ */
