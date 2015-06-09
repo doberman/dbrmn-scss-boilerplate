@@ -1,0 +1,6 @@
+/* _functions.scss */
+
+@function strip-unit($unit) {
+  $stripped: $unit / ($unit * 0 + 1);
+  @return $stripped;
+}

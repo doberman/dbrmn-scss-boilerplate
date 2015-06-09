@@ -7,7 +7,7 @@ $grid-col-padding: 15px;
 
 /* _grid base */
 @include layout-default {
-  
+
   .container-fluid { width: 100%; }
 
   .container {
