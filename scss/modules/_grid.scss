@@ -7,24 +7,23 @@ $grid-col-padding: 15px;
 
 /* _grid base */
 @include layout-default {
-  
+
   .container-fluid { width: 100%; }
 
   .container {
     max-width: $site-max-width;
-    margin: 0 auto;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .row {
     @include clearfix-overflow-visible;
-    margin-left: -$grid-col-padding;
     margin-right: -$grid-col-padding;
+    margin-left: -$grid-col-padding;
   }
 
   .col {
-    padding-top: 0;
     padding-right: $grid-col-padding;
-    padding-bottom: 0;
     padding-left: $grid-col-padding;
   }
 
@@ -35,7 +34,8 @@ $grid-col-padding: 15px;
     .col-sm-#{$i} {
       float: left;
       width: (100% / $grid-cols) * $i;
-      padding: 0 $grid-col-padding;
+      padding-right: $grid-col-padding;
+      padding-left: $grid-col-padding;
     }
   }
 
