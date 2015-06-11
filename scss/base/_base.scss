@@ -9,7 +9,9 @@
   }
 
   body {
+    @include base-font(base);
     color: $color-typography-base;
+    background-color: $color-white;
   }
 
   * {
