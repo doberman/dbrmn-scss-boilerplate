@@ -1,0 +1,5 @@
+// Use a nonexistent layout size to only output styles defined outside layout-* mixins.
+// Optionally use grunt/gulp task to verify this file does not contain any CSS rules, only comments
+
+$layout-size: nonexistent-layout-size;
+@import 'scss/all';

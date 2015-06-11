@@ -1,5 +1,7 @@
 /* _mixins.scss */
 
+@import '../vendor/triangle-mixin';
+
 @mixin clearfix { overflow: hidden; }
 
 /* Let's not even care about IE6/7, http://www.cssmojo.com/latest_new_clearfix_so_far/ */
@@ -59,10 +61,10 @@
 }
 
 @mixin keyframes($animation-name) {
-  @-webkit-keyframes $animation-name { @content; }
-  @-moz-keyframes $animation-name { @content; }
-  @-ms-keyframes $animation-name { @content; }
-  @keyframes $animation-name { @content; }
+  @-webkit-keyframes #{$animation-name} { @content; }
+  @-moz-keyframes #{$animation-name} { @content; }
+  @-ms-keyframes #{$animation-name} { @content; }
+  @keyframes #{$animation-name} { @content; }
 }
 
 @mixin animation($animation) {
