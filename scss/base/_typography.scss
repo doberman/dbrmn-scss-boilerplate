@@ -8,8 +8,18 @@ $base-font-size: 16px;
 
 @mixin font-size($size: $base-font-size) {
   @if $size != none {
-    @if unit($size) != 'px' {
+    // if this is for the base element for `rem` (e.g. body)
+    // - use the `px` based `$base-font-size`
+    @if $size == base {
+      font-size: $base-font-size;
+
+    // if `$size` is not `px` based (e.g. if it's `em` based)
+    // - use only that value
+    } @else if unit($size) != 'px' {
       font-size: $size;
+
+    // ok, this is not the base for `rem` and `$size` is `px` based
+    // - use both the `px` based `$size` value and a calculated `rem` value
     } @else {
       $rem: #{$size / $base-font-size}rem;
       font-size: $size;
@@ -18,16 +28,16 @@ $base-font-size: 16px;
   }
 }
 
-@mixin font-base-attributes($size, $weight, $style) {
-  @include font-size($size);
-  font-weight: $weight;
-
-  @if $style != normal { font-style: $style; }
+@mixin font-base-attributes($size: none, $weight: none, $style: none, $line-height: none) {
+  @if $size != none { @include font-size($size); }
+  @if $weight != none { font-weight: $weight; }
+  @if $style != none { font-style: $style; }
+  @if $line-height != none { line-height: $line-height; }
 }
 
-@mixin base-font($size: 16px, $weight: inherit, $style: normal) {
-  @include font-base-attributes($size, $weight, $style);
-  font-family: 'Helvetica', sans-serif;
+@mixin base-font($size: none, $weight: none, $style: none, $line-height: none) {
+  @include font-base-attributes($size, $weight, $style, $line-height);
+  font-family: Helvetica, sans-serif;
 }
 
 /* _typography small */
@@ -53,4 +63,3 @@ $base-font-size: 16px;
 @include layout-large {
 
 }
-
