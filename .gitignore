@@ -1,1 +1,4 @@
 .sass-cache
+.DS_Store
+style.css
+should-be-empty.css
