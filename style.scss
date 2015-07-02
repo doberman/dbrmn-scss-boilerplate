@@ -1,7 +1,10 @@
 /* style.scss */
 
+
+/* style config */
 $layout-size: default;
 @import 'scss/all';
+
 
 @media #{$bp-medium} {
   $layout-size: medium;

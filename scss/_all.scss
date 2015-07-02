@@ -1,26 +1,33 @@
-/* _mixins */
+/* _all.scss */
 
-@import "helpers/mixins";
 
-/* _media-queries */
+/* mixins */
+@import 'helpers/mixins';
 
-@import "media-queries/media-queries";
 
-/* _vendor */
+/* media-queries */
+@import 'media-queries/media-queries';
 
-/* _base */
 
-@import "base/variables";
-@import "base/normalize";
-@import "base/typography";
-@import "base/base";
+/* vendor */
 
-/* _grid */
 
-@import "modules/grid";
+/* base */
+@import 'base/variables';
+@import 'base/normalize';
+@import 'base/typography';
+@import 'base/base';
 
-/* _utils */
 
-@import "helpers/utils";
+/* grid */
+@import 'modules/grid';
 
-/* _modules */
+
+/* utils */
+@import 'helpers/utils';
+
+
+/* modules */
+
+
+/* full page layouts */

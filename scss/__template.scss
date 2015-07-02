@@ -1,27 +1,28 @@
 /* _template.scss */
 
+
 /* _template config */
 
-/* _template small */
 
+/* _template small */
 @include layout-default {
   // Put all default (i.e small) styles in here, and not outside the layout-default mixin.
 }
 
-/* _template medium */
 
+/* _template medium */
 @include layout-medium {
 
 }
 
-/* _template medium-and-above */
 
+/* _template medium-and-above */
 @include layout-medium-and-above {
 
 }
 
-/* _template large */
 
+/* _template large */
 @include layout-large {
 
 }

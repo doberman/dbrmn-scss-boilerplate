@@ -1,7 +1,7 @@
 /* _base.scss */
 
-@include layout-default {
 
+@include layout-default {
   html {
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
@@ -14,17 +14,14 @@
     background-color: $color-white;
   }
 
-  * {
-    @include box-sizing(border-box);
-  }
+  * { @include box-sizing(border-box) }
 
-  *, *:before, *:after {
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  }
+  *,
+  *:before,
+  *:after { -webkit-tap-highlight-color: rgba(0, 0, 0, 0) }
 
-  *:before, *:after {
-    @include box-sizing(inherit);
-  }
+  *:before,
+  *:after { @include box-sizing(inherit) }
 
   ul, ol {
     list-style: none;
@@ -32,22 +29,21 @@
     padding: 0;
   }
 
-  a {
-    text-decoration: none;
-  }
+  a { text-decoration: none }
 
-  h1, h2, h3, h4, h5, p {
-    margin: 0;
-  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p { margin: 0 }
 
   input, textarea, button {
     -webkit-font-smoothing: inherit;
     border: none;
     padding: 0;
 
-    &:focus {
-      outline: none;
-    }
+    &:focus { outline: none }
   }
 
   fieldset {
@@ -55,5 +51,4 @@
     padding: 0;
     margin: 0;
   }
-
 }

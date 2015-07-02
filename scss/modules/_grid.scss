@@ -1,14 +1,14 @@
 /* _grid.scss */
 
-/* _grid config */
 
+/* _grid config */
 $grid-cols: 12;
 $grid-col-padding: 15px;
 
+
 /* _grid base */
 @include layout-default {
-
-  .container-fluid { width: 100%; }
+  .container-fluid { width: 100% }
 
   .container {
     max-width: $site-max-width;
@@ -27,7 +27,7 @@ $grid-col-padding: 15px;
     padding-left: $grid-col-padding;
   }
 
-  .col-opposite { float: right; }
+  .col-opposite { float: right }
 
   @for $i from 1 through $grid-cols {
     .col-#{$i},
@@ -40,17 +40,15 @@ $grid-col-padding: 15px;
   }
 
   .hide-sm,
-  .hide-sm-inline { display: none; }
-
-  /* _grid states and modifiers */
+  .hide-sm-inline { display: none }
 }
 
+
 /* _grid medium */
-
 @include layout-medium {
-  .hide-md { display: none; }
+  .hide-md { display: none }
 
-  .container { padding: 0 $base-unit * 2; }
+  .container { padding: 0 $base-unit * 2 }
 
   @for $i from 1 through $grid-cols {
     .col-md-#{$i} {
@@ -60,22 +58,22 @@ $grid-col-padding: 15px;
   }
 }
 
+
 /* _grid medium-and-above */
-
 @include layout-medium-and-above {
-  .hide-sm { display: block; }
+  .hide-sm { display: block }
 
-  .hide-md-lg { display: none; }
+  .hide-md-lg { display: none }
 
-  .hide-sm-inline { display: inline; }
+  .hide-sm-inline { display: inline }
 }
 
+
 /* _grid large */
-
 @include layout-large {
-  .hide-md { display: block; }
+  .hide-md { display: block }
 
-  .hide-lg { display: none; }
+  .hide-lg { display: none }
 
   @for $i from 1 through $grid-cols {
     .col-lg-#{$i} {

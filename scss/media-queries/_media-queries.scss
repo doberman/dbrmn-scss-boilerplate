@@ -1,5 +1,6 @@
 /* _media-queries.scss */
 
+
 @mixin respond-to($my-size) {
   @if $layout-size == $my-size {
     @content;
@@ -29,5 +30,3 @@
     @content;
   }
 }
-
-
