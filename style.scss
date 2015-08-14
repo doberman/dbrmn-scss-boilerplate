@@ -1,19 +1,29 @@
 /* style.scss */
 
+/* _mixins */
+
+@import "scss/helpers/mixins";
+
+/* _base */
+
+@import "scss/base/variables";
+@import "scss/base/normalize";
+@import "scss/base/base";
+
 $layout-size: default;
-@import 'scss/all';
+@import "scss/all";
 
 @media #{$bp-medium} {
   $layout-size: medium;
-  @import 'scss/all';
+  @import "scss/all";
 }
 
 @media #{$bp-medium-and-above} {
   $layout-size: medium-and-above;
-  @import 'scss/all';
+  @import "scss/all";
 }
 
 @media #{$bp-large} {
   $layout-size: large;
-  @import 'scss/all';
+  @import "scss/all";
 }
