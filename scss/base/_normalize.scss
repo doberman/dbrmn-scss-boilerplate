@@ -375,6 +375,14 @@
   }
 
   /**
+   * Remove inner drop-shadow styling and rounded borders in mobile Safari
+  */
+  input[type="text"] {
+    -webkit-appearance: none;
+    border-radius: 0;
+  }
+
+  /**
    * Define consistent border, margin, and padding.
    */
 
