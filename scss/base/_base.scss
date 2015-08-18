@@ -41,7 +41,9 @@
   }
 
   input, textarea, button {
+    -webkit-appearance: none;
     -webkit-font-smoothing: inherit;
+    border-radius: 0;
     border: none;
     padding: 0;
 
