@@ -10,7 +10,8 @@
 @import "scss/helpers/mixins";
 @import "scss/helpers/utils";
 
-@import "scss/base/normalize";
+@import "scss/vendor/normalize";
+
 @import "scss/base/base";
 
 $layout-size: default;
