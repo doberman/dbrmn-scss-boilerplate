@@ -24,7 +24,7 @@
 
 .center { text-align: center; }
 
-.no-transition { @include transition(none !important); }
+.no-transition { transition: none !important; }
 
 /* Typography */
 
