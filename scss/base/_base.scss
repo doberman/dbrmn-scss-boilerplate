@@ -20,7 +20,7 @@ body {
 }
 
 *:before, *:after {
-  @include box-sizing(inherit);
+  box-sizing: inherit;
 }
 
 ul, ol {
