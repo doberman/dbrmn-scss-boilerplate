@@ -1,7 +1,3 @@
-/* _mixins */
-
-@import "helpers/mixins";
-
 /* _media-queries */
 
 @import "media-queries/media-queries";
@@ -10,17 +6,12 @@
 
 /* _base */
 
-@import "base/variables";
-@import "base/normalize";
 @import "base/typography";
-@import "base/base";
 
 /* _grid */
 
 @import "modules/grid";
 
-/* _utils */
-
-@import "helpers/utils";
-
 /* _modules */
+
+/* Ex. @import "modules/buttons"
