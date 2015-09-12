@@ -1,5 +1,9 @@
 /* _base.scss */
 
+// This is a good place to put 'opinionated' resets, such as removing
+// -webkit-appearance on certain elements or to include very general
+// project specific styles.
+
 html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

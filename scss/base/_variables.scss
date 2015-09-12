@@ -1,5 +1,8 @@
 /* _variables.scss */
 
+// These are strictly global variables. If you want to define variables local to a module
+// it might be a good idea to include them in the module itself, under /* _module config */
+
 /* Base */
 
 $base-unit: 10px;
