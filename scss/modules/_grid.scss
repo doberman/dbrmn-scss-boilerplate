@@ -50,7 +50,10 @@ $grid-col-padding: 15px;
 @include layout-medium {
   .hide-md { display: none; }
 
-  .container { padding: 0 $base-unit * 2; }
+  .container {
+    padding-right: $base-unit * 2;
+    padding-left: $base-unit * 2;
+  }
 
   @for $i from 1 through $grid-cols {
     .col-md-#{$i} {
