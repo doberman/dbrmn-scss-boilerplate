@@ -22,5 +22,7 @@ $color-typography-base: $color-black;
 
 /* Easings */
 
+$ease-aggressive: cubic-bezier(0.215, 0.61, 0.355, 1);
+$ease-codrops: cubic-bezier(0.2, 1, 0.3, 1);
 $ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.150, 0.860);
 $ease-default: $ease-in-out-circ;
