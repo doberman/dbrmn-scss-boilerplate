@@ -17,6 +17,11 @@
 $layout-size: default;
 @import "scss/all";
 
+@media #{$bp-small} {
+  $layout-size: small;
+  @import "scss/all";
+}
+
 @media #{$bp-medium} {
   $layout-size: medium;
   @import "scss/all";

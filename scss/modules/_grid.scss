@@ -38,10 +38,12 @@ $grid-col-padding: 15px;
       padding-left: $grid-col-padding;
     }
   }
+}
 
+/* _grid small */
+
+@include layout-small {
   .hide-sm { display: none; }
-
-  /* _grid states and modifiers */
 }
 
 /* _grid medium */
