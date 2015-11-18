@@ -1,5 +1,6 @@
 /* _media-queries.scss */
 
+
 @mixin respond-to($my-size) {
   @if $layout-size == $my-size {
     @content;
@@ -8,6 +9,12 @@
 
 @mixin layout-default {
   @include respond-to(default) {
+    @content;
+  }
+}
+
+@mixin layout-small {
+  @include respond-to(small) {
     @content;
   }
 }
@@ -29,5 +36,3 @@
     @content;
   }
 }
-
-

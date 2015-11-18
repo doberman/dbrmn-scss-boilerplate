@@ -1,0 +1,31 @@
+/* _module.scss */
+// This is the basic layout of a module and might be handy when creating a new one.
+// Simply do a copy-paste and a find and replace to substitute ex. _module with _buttons.
+
+/* _module config */
+// Here is a good place to put strictly module specific variables or mixins.
+
+/* _module default */
+@include layout-default {
+  // Put all default (i.e small) styles in here, and not outside the layout-default mixin.
+}
+
+/* _module small */
+@include layout-small {
+
+}
+
+/* _module medium */
+@include layout-medium {
+
+}
+
+/* _module medium-and-above */
+@include layout-medium-and-above {
+
+}
+
+/* _module large */
+@include layout-large {
+
+}

@@ -1,92 +1,84 @@
-@import "../base/variables.scss";
-
 /* _utils.scss */
 
 /* General */
+.hide { display: none !important; }
 
-@include layout-default {
-  .hide { display: none !important; }
+.clearfix { @include clearfix; }
 
-  .clearfix { @include clearfix; }
+.clearfix-overflow-visible { @include clearfix-overflow-visible; }
 
-  .clearfix-overflow-visible { @include clearfix-overflow-visible; }
+.fluid { width: 100%; }
 
-  .fluid { width: 100%; }
+.left { float: left; }
 
-  .left { float: left; }
+.right { float: right; }
 
-  .right { float: right; }
+.inline { display: inline; }
 
-  .inline { display: inline; }
+.block { display: block; }
 
-  .block { display: block; }
+.inline-block { display: inline-block; }
 
-  .inline-block { display: inline-block; }
+.pointer { cursor: pointer; }
 
-  .pointer { cursor: pointer; }
+.center { text-align: center; }
 
-  .center { text-align: center; }
+.no-transition { transition: none !important; }
 
-  .no-transition { @include transition(none !important); }
+/* Typography */
+.uppercase { text-transform: uppercase; }
 
-  /* Typography */
+.white { color: $color-white; }
 
-  .uppercase { text-transform: uppercase; }
+.black { color: $color-black; }
 
-  .white { color: $color-white; }
+/* Base-margin and base-padding */
+.base-margin { margin: $base-unit; }
 
-  .black { color: $color-black; }
+.base-margin-top { margin-top: $base-unit; }
 
-  /* Base-margin and base-padding */
+.base-margin-bottom { margin-bottom: $base-unit; }
 
-  .base-margin { margin: $base-unit; }
+.base-margin-left { margin-left: $base-unit; }
 
-  .base-margin-top { margin-top: $base-unit; }
+.base-margin-right { margin-right: $base-unit; }
 
-  .base-margin-bottom { margin-bottom: $base-unit; }
+@for $i from 2 through 5 {
+  $base-multiplied: $i * $base-unit;
 
-  .base-margin-left { margin-left: $base-unit; }
+  .base-margin-x#{$i} { margin: $base-multiplied; }
 
-  .base-margin-right { margin-right: $base-unit; }
+  .base-margin-top-x#{$i} { margin-top: $base-multiplied; }
 
-  @for $i from 2 through 5 {
-    $base-multiplied: $i * $base-unit;
+  .base-margin-bottom-x#{$i} { margin-bottom: $base-multiplied; }
 
-    .base-margin-x#{$i} { margin: $base-multiplied; }
+  .base-margin-left-x#{$i} { margin-left: $base-multiplied; }
 
-    .base-margin-top-x#{$i} { margin-top: $base-multiplied; }
+  .base-margin-right-x#{$i} { margin-right: $base-multiplied; }
+}
 
-    .base-margin-bottom-x#{$i} { margin-bottom: $base-multiplied; }
+.base-padding { padding: $base-unit; }
 
-    .base-margin-left-x#{$i} { margin-left: $base-multiplied; }
+.base-padding-top { padding-top: $base-unit; }
 
-    .base-margin-right-x#{$i} { margin-right: $base-multiplied; }
-  }
+.base-padding-bottom { padding-bottom: $base-unit; }
 
-  .base-padding { padding: $base-unit; }
+.base-padding-left { padding-left: $base-unit; }
 
-  .base-padding-top { padding-top: $base-unit; }
+.base-padding-right { padding-right: $base-unit; }
 
-  .base-padding-bottom { padding-bottom: $base-unit; }
+.base-padding-sm { padding: 0 $base-unit * 1.8; }
 
-  .base-padding-left { padding-left: $base-unit; }
+@for $i from 2 through 5 {
+  $base-multiplied: $i * $base-unit;
 
-  .base-padding-right { padding-right: $base-unit; }
+  .base-padding-x#{$i} { padding: $base-multiplied; }
 
-  .base-padding-sm { padding: 0 $base-unit * 1.8; }
+  .base-padding-top-x#{$i} { padding-top: $base-multiplied; }
 
-  @for $i from 2 through 5 {
-    $base-multiplied: $i * $base-unit;
+  .base-padding-bottom-x#{$i} { padding-bottom: $base-multiplied; }
 
-    .base-padding-x#{$i} { padding: $base-multiplied; }
+  .base-padding-left-x#{$i} { padding-left: $base-multiplied; }
 
-    .base-padding-top-x#{$i} { padding-top: $base-multiplied; }
-
-    .base-padding-bottom-x#{$i} { padding-bottom: $base-multiplied; }
-
-    .base-padding-left-x#{$i} { padding-left: $base-multiplied; }
-
-    .base-padding-right-x#{$i} { padding-right: $base-multiplied; }
-  }
-
+  .base-padding-right-x#{$i} { padding-right: $base-multiplied; }
 }

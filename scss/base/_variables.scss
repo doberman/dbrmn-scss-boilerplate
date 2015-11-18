@@ -1,23 +1,27 @@
 /* _variables.scss */
 
-/* Base */
+// These are strictly global variables. If you want to define variables local
+// to a module it might be a good idea to include them in the module itself,
+// under /* _module config */
 
+/* Base */
 $base-unit: 10px;
 $site-max-width: 1240px;
 
-/* Breakpoints */
 
+/* Breakpoints */
+$bp-small: '(max-width: 549px)';
 $bp-medium: '(min-width: 550px) and (max-width: 1000px)';
 $bp-medium-and-above: '(min-width: 550px)';
 $bp-large: '(min-width: 1001px)';
 
 /* Colors */
-
 $color-white: #fff;
 $color-black: #000;
 $color-typography-base: $color-black;
 
 /* Easings */
-
+$ease-aggressive: cubic-bezier(0.215, 0.61, 0.355, 1);
+$ease-codrops: cubic-bezier(0.2, 1, 0.3, 1);
 $ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.150, 0.860);
 $ease-default: $ease-in-out-circ;

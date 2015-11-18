@@ -1,13 +1,11 @@
 /* _grid.scss */
 
 /* _grid config */
-
 $grid-cols: 12;
 $grid-col-padding: 15px;
 
 /* _grid base */
 @include layout-default {
-
   .container-fluid { width: 100%; }
 
   .container {
@@ -38,19 +36,21 @@ $grid-col-padding: 15px;
       padding-left: $grid-col-padding;
     }
   }
+}
 
-  .hide-sm,
-  .hide-sm-inline { display: none; }
-
-  /* _grid states and modifiers */
+/* _grid small */
+@include layout-small {
+  .hide-sm { display: none; }
 }
 
 /* _grid medium */
-
 @include layout-medium {
   .hide-md { display: none; }
 
-  .container { padding: 0 $base-unit * 2; }
+  .container {
+    padding-right: $base-unit * 2;
+    padding-left: $base-unit * 2;
+  }
 
   @for $i from 1 through $grid-cols {
     .col-md-#{$i} {
@@ -61,20 +61,12 @@ $grid-col-padding: 15px;
 }
 
 /* _grid medium-and-above */
-
 @include layout-medium-and-above {
-  .hide-sm { display: block; }
-
   .hide-md-lg { display: none; }
-
-  .hide-sm-inline { display: inline; }
 }
 
 /* _grid large */
-
 @include layout-large {
-  .hide-md { display: block; }
-
   .hide-lg { display: none; }
 
   @for $i from 1 through $grid-cols {
