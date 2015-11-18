@@ -38,11 +38,12 @@ $grid-col-padding: 15px;
       padding-left: $grid-col-padding;
     }
   }
+}
 
-  .hide-sm,
-  .hide-sm-inline { display: none; }
+/* _grid small */
 
-  /* _grid states and modifiers */
+@include layout-small {
+  .hide-sm { display: none; }
 }
 
 /* _grid medium */
@@ -66,18 +67,12 @@ $grid-col-padding: 15px;
 /* _grid medium-and-above */
 
 @include layout-medium-and-above {
-  .hide-sm { display: block; }
-
   .hide-md-lg { display: none; }
-
-  .hide-sm-inline { display: inline; }
 }
 
 /* _grid large */
 
 @include layout-large {
-  .hide-md { display: block; }
-
   .hide-lg { display: none; }
 
   @for $i from 1 through $grid-cols {
