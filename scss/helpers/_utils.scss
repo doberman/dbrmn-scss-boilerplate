@@ -1,7 +1,6 @@
 /* _utils.scss */
 
 /* General */
-
 .hide { display: none !important; }
 
 .clearfix { @include clearfix; }
@@ -27,7 +26,6 @@
 .no-transition { transition: none !important; }
 
 /* Typography */
-
 .uppercase { text-transform: uppercase; }
 
 .white { color: $color-white; }
@@ -35,7 +33,6 @@
 .black { color: $color-black; }
 
 /* Base-margin and base-padding */
-
 .base-margin { margin: $base-unit; }
 
 .base-margin-top { margin-top: $base-unit; }

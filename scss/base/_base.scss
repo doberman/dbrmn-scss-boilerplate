@@ -21,13 +21,10 @@ body {
   line-height: 1;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-*:before, *:after {
-  box-sizing: inherit;
-}
+*:before,
+*:after { box-sizing: inherit; }
 
 ul, ol {
   list-style: none;
@@ -35,22 +32,14 @@ ul, ol {
   padding: 0;
 }
 
-a {
-  text-decoration: none;
-}
+a { text-decoration: none }
 
-h1, h2, h3, h4, h5, p {
-  margin: 0;
-}
+h1, h2, h3, h4, h5, p { margin: 0; }
 
 input, textarea, button {
   -webkit-font-smoothing: inherit;
   border: none;
   padding: 0;
-
-  &:focus {
-    outline: none;
-  }
 }
 
 // Fixes https://bugzilla.mozilla.org/show_bug.cgi?id=140562
@@ -66,6 +55,4 @@ fieldset {
 }
 
 // Prevent overflowing of images in fluid containers
-img {
-  max-width: 100%;
-}
+img { max-width: 100%; }
