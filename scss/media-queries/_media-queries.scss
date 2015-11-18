@@ -13,6 +13,12 @@
   }
 }
 
+@mixin layout-small {
+  @include respond-to(small) {
+    @content;
+  }
+}
+
 @mixin layout-medium {
   @include respond-to(medium) {
     @content;

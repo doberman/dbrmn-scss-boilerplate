@@ -1,93 +1,84 @@
 /* _utils.scss */
 
+/* General */
+.hide { display: none !important; }
 
-/* _utils config */
-@import '../base/variables';
+.clearfix { @include clearfix; }
 
+.clearfix-overflow-visible { @include clearfix-overflow-visible; }
 
-@include layout-default {
-  /* General */
-  .hide { display: none !important }
+.fluid { width: 100%; }
 
-  .clearfix { @include clearfix }
+.left { float: left; }
 
-  .clearfix-overflow-visible { @include clearfix-overflow-visible }
+.right { float: right; }
 
-  .fluid { width: 100% }
+.inline { display: inline; }
 
-  .left { float: left }
+.block { display: block; }
 
-  .right { float: right }
+.inline-block { display: inline-block; }
 
-  .inline { display: inline }
+.pointer { cursor: pointer; }
 
-  .block { display: block }
+.center { text-align: center; }
 
-  .inline-block { display: inline-block }
+.no-transition { transition: none !important; }
 
-  .pointer { cursor: pointer }
+/* Typography */
+.uppercase { text-transform: uppercase; }
 
-  .center { text-align: center }
+.white { color: $color-white; }
 
-  .no-transition { @include transition(none !important) }
+.black { color: $color-black; }
 
+/* Base-margin and base-padding */
+.base-margin { margin: $base-unit; }
 
-  /* Typography */
-  .uppercase { text-transform: uppercase }
+.base-margin-top { margin-top: $base-unit; }
 
-  .white { color: $color-white }
+.base-margin-bottom { margin-bottom: $base-unit; }
 
-  .black { color: $color-black }
+.base-margin-left { margin-left: $base-unit; }
 
+.base-margin-right { margin-right: $base-unit; }
 
-  /* Base-margin and base-padding */
-  .base-margin { margin: $base-unit }
+@for $i from 2 through 5 {
+  $base-multiplied: $i * $base-unit;
 
-  .base-margin-top { margin-top: $base-unit }
+  .base-margin-x#{$i} { margin: $base-multiplied; }
 
-  .base-margin-bottom { margin-bottom: $base-unit }
+  .base-margin-top-x#{$i} { margin-top: $base-multiplied; }
 
-  .base-margin-left { margin-left: $base-unit }
+  .base-margin-bottom-x#{$i} { margin-bottom: $base-multiplied; }
 
-  .base-margin-right { margin-right: $base-unit }
+  .base-margin-left-x#{$i} { margin-left: $base-multiplied; }
 
-  @for $i from 2 through 5 {
-    $base-multiplied: $i * $base-unit;
+  .base-margin-right-x#{$i} { margin-right: $base-multiplied; }
+}
 
-    .base-margin-x#{$i} { margin: $base-multiplied }
+.base-padding { padding: $base-unit; }
 
-    .base-margin-top-x#{$i} { margin-top: $base-multiplied }
+.base-padding-top { padding-top: $base-unit; }
 
-    .base-margin-bottom-x#{$i} { margin-bottom: $base-multiplied }
+.base-padding-bottom { padding-bottom: $base-unit; }
 
-    .base-margin-left-x#{$i} { margin-left: $base-multiplied }
+.base-padding-left { padding-left: $base-unit; }
 
-    .base-margin-right-x#{$i} { margin-right: $base-multiplied }
-  }
+.base-padding-right { padding-right: $base-unit; }
 
-  .base-padding { padding: $base-unit }
+.base-padding-sm { padding: 0 $base-unit * 1.8; }
 
-  .base-padding-top { padding-top: $base-unit }
+@for $i from 2 through 5 {
+  $base-multiplied: $i * $base-unit;
 
-  .base-padding-bottom { padding-bottom: $base-unit }
+  .base-padding-x#{$i} { padding: $base-multiplied; }
 
-  .base-padding-left { padding-left: $base-unit }
+  .base-padding-top-x#{$i} { padding-top: $base-multiplied; }
 
-  .base-padding-right { padding-right: $base-unit }
+  .base-padding-bottom-x#{$i} { padding-bottom: $base-multiplied; }
 
-  .base-padding-sm { padding: 0 $base-unit * 1.8 }
+  .base-padding-left-x#{$i} { padding-left: $base-multiplied; }
 
-  @for $i from 2 through 5 {
-    $base-multiplied: $i * $base-unit;
-
-    .base-padding-x#{$i} { padding: $base-multiplied }
-
-    .base-padding-top-x#{$i} { padding-top: $base-multiplied }
-
-    .base-padding-bottom-x#{$i} { padding-bottom: $base-multiplied }
-
-    .base-padding-left-x#{$i} { padding-left: $base-multiplied }
-
-    .base-padding-right-x#{$i} { padding-right: $base-multiplied }
-  }
+  .base-padding-right-x#{$i} { padding-right: $base-multiplied; }
 }

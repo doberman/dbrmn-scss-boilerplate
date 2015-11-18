@@ -44,6 +44,10 @@ $base-font-size: 16px;
 /* _typography small */
 @include layout-default {
 
+  body {
+    @include base-font(base);
+  }
+
 }
 
 

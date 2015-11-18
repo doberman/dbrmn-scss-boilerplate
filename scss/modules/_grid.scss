@@ -1,14 +1,12 @@
 /* _grid.scss */
 
-
 /* _grid config */
 $grid-cols: 12;
 $grid-col-padding: 15px;
 
-
 /* _grid base */
 @include layout-default {
-  .container-fluid { width: 100% }
+  .container-fluid { width: 100%; }
 
   .container {
     max-width: $site-max-width;
@@ -27,7 +25,7 @@ $grid-col-padding: 15px;
     padding-left: $grid-col-padding;
   }
 
-  .col-opposite { float: right }
+  .col-opposite { float: right; }
 
   @for $i from 1 through $grid-cols {
     .col-#{$i},
@@ -38,17 +36,21 @@ $grid-col-padding: 15px;
       padding-left: $grid-col-padding;
     }
   }
-
-  .hide-sm,
-  .hide-sm-inline { display: none }
 }
 
+/* _grid small */
+@include layout-small {
+  .hide-sm { display: none; }
+}
 
 /* _grid medium */
 @include layout-medium {
-  .hide-md { display: none }
+  .hide-md { display: none; }
 
-  .container { padding: 0 $base-unit * 2 }
+  .container {
+    padding-right: $base-unit * 2;
+    padding-left: $base-unit * 2;
+  }
 
   @for $i from 1 through $grid-cols {
     .col-md-#{$i} {
@@ -58,22 +60,14 @@ $grid-col-padding: 15px;
   }
 }
 
-
 /* _grid medium-and-above */
 @include layout-medium-and-above {
-  .hide-sm { display: block }
-
-  .hide-md-lg { display: none }
-
-  .hide-sm-inline { display: inline }
+  .hide-md-lg { display: none; }
 }
-
 
 /* _grid large */
 @include layout-large {
-  .hide-md { display: block }
-
-  .hide-lg { display: none }
+  .hide-lg { display: none; }
 
   @for $i from 1 through $grid-cols {
     .col-lg-#{$i} {
