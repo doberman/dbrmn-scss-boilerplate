@@ -5,15 +5,15 @@
 // below  the /* _media-queries */ import.
 
 /* _media-queries */
-@import "media-queries/media-queries";
+@import 'media-queries/media-queries';
 
 /* _vendor */
 
 /* _base */
-@import "base/typography";
+@import 'base/typography';
 
 /* _grid */
-@import "modules/grid";
+@import 'modules/grid';
 
 /* _modules */
-/* Eg. @import "modules/buttons" */
+/* Eg. @import 'modules/buttons' */
