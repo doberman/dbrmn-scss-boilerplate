@@ -7,12 +7,18 @@
 html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
 
 body {
   color: $color-typography-base;
   background-color: $color-white;
+
+  // Set a standardized guaranteed line-height of 1, since the default interpreted
+  // value of 'normal' is browser specific
+  // http://jaydenseric.com/blog/forget-normalize-or-resets-lay-your-own-css-foundation
+  line-height: 1;
 }
 
 * {
@@ -47,8 +53,19 @@ input, textarea, button {
   }
 }
 
+// Fixes https://bugzilla.mozilla.org/show_bug.cgi?id=140562
+::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
 fieldset {
   border: none;
   padding: 0;
   margin: 0;
+}
+
+// Prevent overflowing of images in fluid containers
+img {
+  max-width: 100%;
 }
