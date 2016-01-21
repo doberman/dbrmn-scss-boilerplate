@@ -3,76 +3,171 @@
 /* _grid config */
 $grid-cols: 12;
 $grid-col-padding: 15px;
+$flexbox: true;
 
 /* _grid base */
-@include layout-default {
-  .container-fluid { width: 100%; }
+@if not $flexbox {
+  @include layout-default {
+    
+    .debug-col {
+      background-color: red;
+      margin-bottom: $base-unit;
+      padding: $base-unit;
+    }
 
-  .container {
-    max-width: $site-max-width;
-    margin-right: auto;
-    margin-left: auto;
-  }
+    .container-fluid { width: 100%; }
 
-  .row {
-    @include clearfix-overflow-visible;
-    margin-right: -$grid-col-padding;
-    margin-left: -$grid-col-padding;
-  }
+    .container {
+      max-width: $site-max-width;
+      margin-right: auto;
+      margin-left: auto;
+    }
 
-  .col {
-    padding-right: $grid-col-padding;
-    padding-left: $grid-col-padding;
-  }
+    .row {
+      @include clearfix-overflow-visible;
+      margin-right: -$grid-col-padding;
+      margin-left: -$grid-col-padding;
+    }
 
-  .col-opposite { float: right; }
-
-  @for $i from 1 through $grid-cols {
-    .col-#{$i},
-    .col-sm-#{$i} {
-      float: left;
-      width: (100% / $grid-cols) * $i;
+    .col {
       padding-right: $grid-col-padding;
       padding-left: $grid-col-padding;
     }
-  }
-}
 
-/* _grid small */
-@include layout-small {
-  .hide-sm { display: none; }
-}
+    .col-opposite { float: right; }
 
-/* _grid medium */
-@include layout-medium {
-  .hide-md { display: none; }
-
-  .container {
-    padding-right: $base-unit * 2;
-    padding-left: $base-unit * 2;
-  }
-
-  @for $i from 1 through $grid-cols {
-    .col-md-#{$i} {
-      float: left;
-      width: (100% / $grid-cols) * $i;
+    @for $i from 1 through $grid-cols {
+      .col-#{$i},
+      .col-sm-#{$i} {
+        float: left;
+        width: (100% / $grid-cols) * $i;
+        padding-right: $grid-col-padding;
+        padding-left: $grid-col-padding;
+      }
     }
   }
-}
 
-/* _grid medium-and-above */
-@include layout-medium-and-above {
-  .hide-md-lg { display: none; }
-}
+  /* _grid small */
+  @include layout-small {
+    .hide-sm { display: none; }
+  }
 
-/* _grid large */
-@include layout-large {
-  .hide-lg { display: none; }
+  /* _grid medium */
+  @include layout-medium {
+    .hide-md { display: none; }
 
-  @for $i from 1 through $grid-cols {
-    .col-lg-#{$i} {
-      float: left;
-      width: (100% / $grid-cols) * $i;
+    .container {
+      padding-right: $base-unit * 2;
+      padding-left: $base-unit * 2;
+    }
+
+    @for $i from 1 through $grid-cols {
+      .col-md-#{$i} {
+        float: left;
+        width: (100% / $grid-cols) * $i;
+      }
+    }
+  }
+
+  /* _grid medium-and-above */
+  @include layout-medium-and-above {
+    .hide-md-lg { display: none; }
+  }
+
+  /* _grid large */
+  @include layout-large {
+    .hide-lg { display: none; }
+
+    @for $i from 1 through $grid-cols {
+      .col-lg-#{$i} {
+        float: left;
+        width: (100% / $grid-cols) * $i;
+      }
+    }
+  }
+} @else {
+  @include layout-default {
+    // plz remove when done kthnxbai
+    .debug-col {
+      background-color: red;
+      margin-bottom: $base-unit;
+      padding: $base-unit;
+    }
+
+    .debug-col__title {
+      margin: 0 0 $base-unit 0;
+    }
+
+    .container-fluid { width: 100%; }
+
+    .container {
+      max-width: $site-max-width;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .row {
+      display: flex;
+      flex: 0 1 auto;
+      flex-wrap: wrap;
+      margin-right: -$grid-col-padding;
+      margin-left: -$grid-col-padding;
+    }
+
+    .col {
+      padding-right: $grid-col-padding;
+      padding-left: $grid-col-padding;
+    }
+
+    // .col-opposite { float: right; }
+
+    @for $i from 1 through $grid-cols {
+      .col-#{$i},
+      .col-sm-#{$i} {
+        flex-basis: (100% / $grid-cols) * $i;
+        max-width: (100% / $grid-cols) * $i;
+        padding-right: $grid-col-padding;
+        padding-left: $grid-col-padding;
+      }
+    }
+  }
+
+  /* _grid small */
+  @include layout-small {
+    .hide-sm { display: none; }
+  }
+
+  /* _grid medium */
+  @include layout-medium {
+    .hide-md { display: none; }
+
+    .container {
+      padding-right: $base-unit * 2;
+      padding-left: $base-unit * 2;
+    }
+
+    @for $i from 1 through $grid-cols {
+      .col-md-#{$i} {
+        flex-basis: (100% / $grid-cols) * $i;
+        max-width: (100% / $grid-cols) * $i;
+      }
+    }
+  }
+
+  /* _grid medium-and-above */
+  @include layout-medium-and-above {
+    .hide-md-lg { display: none; }
+  }
+
+  /* _grid large */
+  @include layout-large {
+    .hide-lg { display: none; }
+
+    @for $i from 1 through $grid-cols {
+      .col-lg-#{$i} {
+        flex-basis: (100% / $grid-cols) * $i;
+        max-width: (100% / $grid-cols) * $i;
+      }
     }
   }
 }
