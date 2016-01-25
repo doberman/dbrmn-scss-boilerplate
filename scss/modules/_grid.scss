@@ -3,7 +3,12 @@
 /* _grid config */
 $grid-cols: 12;
 $grid-col-padding: 15px;
-$flexbox: true;
+$grid-layout: false;
+$flexbox: false;
+
+@if ($grid-layout == true and $flexbox == true) {
+  @error "CSS Grid Layout and flexbox can't both be activated at the same time. Choose one.";
+}
 
 /* _grid base */
 @include layout-default {
@@ -17,15 +22,22 @@ $flexbox: true;
   }
 
   .row {
-    @if not $flexbox {
-      @include clearfix-overflow-visible;
-    } @else {
+    @if $grid-layout {
+      display: grid;
+      grid-template-columns: repeat($grid-cols, (100%/$grid-cols));
+      grid-column-gap: $base-unit;
+      grid-row-gap: $base-unit;
+    } @else if $flexbox {
       display: flex;
       flex: 0 1 auto;
       flex-wrap: wrap;
+      margin-right: -$grid-col-padding;
+      margin-left: -$grid-col-padding;
+    } @else {
+      @include clearfix-overflow-visible;
+      margin-right: -$grid-col-padding;
+      margin-left: -$grid-col-padding;
     }
-    margin-right: -$grid-col-padding;
-    margin-left: -$grid-col-padding;
   }
 
   .col {
@@ -38,15 +50,20 @@ $flexbox: true;
   @for $i from 1 through $grid-cols {
     .col-#{$i},
     .col-sm-#{$i} {
-      @if not $flexbox {
-        float: left;
-        width: (100% / $grid-cols) * $i;
-      } @else {
+      @if $grid-layout {
+        grid-column: col / span $i;
+      }
+      @else if $flexbox {
         flex-basis: (100% / $grid-cols) * $i;
         max-width: (100% / $grid-cols) * $i;
+        padding-right: $grid-col-padding;
+        padding-left: $grid-col-padding;
+      } @else {
+        float: left;
+        width: (100% / $grid-cols) * $i;
+        padding-right: $grid-col-padding;
+        padding-left: $grid-col-padding;
       }
-      padding-right: $grid-col-padding;
-      padding-left: $grid-col-padding;
     }
   }
 }
@@ -67,12 +84,19 @@ $flexbox: true;
 
   @for $i from 1 through $grid-cols {
     .col-md-#{$i} {
-      @if not $flexbox {
-        float: left;
-        width: (100% / $grid-cols) * $i;
-      } @else {
+      @if $grid-layout {
+        grid-column: col / span $i;
+      }
+      @else if $flexbox {
         flex-basis: (100% / $grid-cols) * $i;
         max-width: (100% / $grid-cols) * $i;
+        padding-right: $grid-col-padding;
+        padding-left: $grid-col-padding;
+      } @else {
+        float: left;
+        width: (100% / $grid-cols) * $i;
+        padding-right: $grid-col-padding;
+        padding-left: $grid-col-padding;
       }
     }
   }
@@ -89,12 +113,19 @@ $flexbox: true;
 
   @for $i from 1 through $grid-cols {
     .col-lg-#{$i} {
-      @if not $flexbox {
-        float: left;
-        width: (100% / $grid-cols) * $i;
-      } @else {
+      @if $grid-layout {
+        grid-column: col / span $i;
+      }
+      @else if $flexbox {
         flex-basis: (100% / $grid-cols) * $i;
         max-width: (100% / $grid-cols) * $i;
+        padding-right: $grid-col-padding;
+        padding-left: $grid-col-padding;
+      } @else {
+        float: left;
+        width: (100% / $grid-cols) * $i;
+        padding-right: $grid-col-padding;
+        padding-left: $grid-col-padding;
       }
     }
   }
