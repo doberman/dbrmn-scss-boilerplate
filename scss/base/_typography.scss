@@ -72,6 +72,12 @@ $heading-sizes: (
     }
 }
 
+/* _typography paragraphs */
+p {
+  margin-bottom: 1em;
+  line-height: $base-line-height;
+}
+
 /* _typography small */
 
 @include layout-default {
