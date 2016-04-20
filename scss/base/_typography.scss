@@ -3,6 +3,8 @@
 /* _typography config */
 
 $base-font-size: 16px;
+$base-line-height: 120%;
+
 
 /* _typography mixins */
 
@@ -38,6 +40,36 @@ $base-font-size: 16px;
 @mixin base-font($size: none, $weight: none, $style: none, $line-height: none) {
   @include font-base-attributes($size, $weight, $style, $line-height);
   font-family: Helvetica, sans-serif;
+}
+
+/* _typography heading styles */
+$heading-sizes: (
+  layout-default: (
+    'h1': 24,
+    'h2': 20,
+    'h3': 19,
+    'h4': 18,
+    'h5': 17,
+    'h6': 16,
+  ),
+  layout-medium: (
+    'h1': 48,
+    'h2': 40,
+    'h3': 31,
+    'h4': 25,
+    'h5': 20,
+    'h6': 16,
+  ),
+) !default;
+
+@each $size, $headers in $heading-sizes {
+    @each $header, $font-size in $headers {
+      #{$header} {
+        font-size: rem-calc($font-size);
+        margin-bottom: 0.5em;
+        line-height: $base-line-height;
+      }
+    }
 }
 
 /* _typography small */
