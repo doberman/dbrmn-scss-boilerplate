@@ -3,7 +3,7 @@
 /* _grid config */
 
 $grid-cols: 12;
-$grid-col-padding: 15px;
+$grid-gutter: 30px;
 
 /* _grid base */
 @include layout-default {
@@ -18,13 +18,18 @@ $grid-col-padding: 15px;
 
   .row {
     @include clearfix-overflow-visible;
-    margin-right: -$grid-col-padding;
-    margin-left: -$grid-col-padding;
+    
+
+    & & {
+      margin-right: rem-calc($grid-gutter) / 2 * -1;
+      margin-left: rem-calc($grid-gutter) / 2 * -1;
+
+    }
   }
 
   .col {
-    padding-right: $grid-col-padding;
-    padding-left: $grid-col-padding;
+    padding-right: rem-calc($grid-gutter) / 2;
+    padding-left: rem-calc($grid-gutter) / 2;
   }
 
   .col-opposite { float: right; }
@@ -34,8 +39,8 @@ $grid-col-padding: 15px;
     .col-sm-#{$i} {
       float: left;
       width: (100% / $grid-cols) * $i;
-      padding-right: $grid-col-padding;
-      padding-left: $grid-col-padding;
+      padding-right: rem-calc($grid-gutter) / 2;
+      padding-left: rem-calc($grid-gutter) / 2;
     }
   }
 
