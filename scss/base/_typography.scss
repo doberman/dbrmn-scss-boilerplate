@@ -3,8 +3,6 @@
 /* _typography config */
 
 $base-font-size: 16px;
-$base-line-height: 120%;
-
 
 /* _typography mixins */
 
@@ -67,7 +65,7 @@ $heading-sizes: (
       #{$header} {
         font-size: rem-calc($font-size);
         margin-bottom: 0.5em;
-        line-height: $base-line-height;
+        
       }
     }
 }
@@ -75,7 +73,6 @@ $heading-sizes: (
 /* _typography paragraphs */
 p {
   margin-bottom: 1em;
-  line-height: $base-line-height;
 }
 
 /* _typography small */
