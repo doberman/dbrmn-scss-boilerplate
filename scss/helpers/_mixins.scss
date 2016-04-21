@@ -12,3 +12,29 @@
     clear: both;
   }
 }
+
+/// Iterates through breakpoints defined in `$breakpoint-classes` and prints the CSS inside the mixin at each breakpoint's media query.
+@mixin each-breakpoint($small: true) {
+  $map: $breakpoint-classes;
+
+  @if not $small {
+    $map: map-remove($map, $zero-breakpoint);
+  }
+
+  @each $size in $map {
+    $size: $size !global;
+
+    @include breakpoint($size) {
+      @content;
+    }
+  }
+}
+
+@mixin row(){
+  @include clearfix-overflow-visible;
+  & & {
+    margin-right: rem-calc($grid-gutter) / -2;
+    margin-left: rem-calc($grid-gutter) / -2;
+  }
+}
+
