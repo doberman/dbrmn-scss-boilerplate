@@ -2,11 +2,11 @@
 
 /* _grid config */
 
-$grid-cols: 12;
+$grid-col-count: 12;
 $grid-gutter: 30px;
 
 /* _grid base */
-@include layout-default {
+@include breakpoint(sm) {
 
   .container-fluid { width: 100%; }
 
@@ -17,78 +17,29 @@ $grid-gutter: 30px;
   }
 
   .row {
-    @include clearfix-overflow-visible;
-    
-
-    & & {
-      margin-right: rem-calc($grid-gutter) / 2 * -1;
-      margin-left: rem-calc($grid-gutter) / 2 * -1;
-
-    }
+    @include row();
   }
 
   .col {
     padding-right: rem-calc($grid-gutter) / 2;
     padding-left: rem-calc($grid-gutter) / 2;
+    float: left;
   }
 
   .col-opposite { float: right; }
 
-  @for $i from 1 through $grid-cols {
-    .col-#{$i},
-    .col-sm-#{$i} {
-      float: left;
-      width: (100% / $grid-cols) * $i;
-      padding-right: rem-calc($grid-gutter) / 2;
-      padding-left: rem-calc($grid-gutter) / 2;
-    }
-  }
-
   .hide-sm,
   .hide-sm-inline { display: none; }
-
-  /* _grid states and modifiers */
 }
 
-/* _grid medium */
-
-@include layout-medium {
-  .hide-md { display: none; }
-
-  .container {
-    padding-right: $base-unit * 2;
-    padding-left: $base-unit * 2;
-  }
-
-  @for $i from 1 through $grid-cols {
-    .col-md-#{$i} {
-      float: left;
-      width: (100% / $grid-cols) * $i;
-    }
-  }
-}
-
-/* _grid medium-and-above */
-
-@include layout-medium-and-above {
-  .hide-sm { display: block; }
-
-  .hide-md-lg { display: none; }
-
-  .hide-sm-inline { display: inline; }
-}
-
-/* _grid large */
-
-@include layout-large {
-  .hide-md { display: block; }
-
-  .hide-lg { display: none; }
-
-  @for $i from 1 through $grid-cols {
-    .col-lg-#{$i} {
-      float: left;
-      width: (100% / $grid-cols) * $i;
+/* _grid column generator */
+@include each-breakpoint {
+  @for $i from 1 through $grid-col-count {
+    /* #$size */
+    .#{$size}-#{$i} {
+      width: (100% / $grid-col-count) * $i;
+      padding-right: rem-calc($grid-gutter) / 2;
+      padding-left: rem-calc($grid-gutter) / 2;
     }
   }
 }
