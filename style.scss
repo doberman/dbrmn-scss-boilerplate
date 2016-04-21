@@ -6,28 +6,8 @@
 */
 
 @import "scss/base/variables";
-
 @import "scss/helpers/mixins";
 @import "scss/helpers/utils";
-
 @import "scss/vendor/normalize";
-
 @import "scss/base/base";
-
-$layout-size: default;
 @import "scss/all";
-
-@media #{$bp-medium} {
-  $layout-size: medium;
-  @import "scss/all";
-}
-
-@media #{$bp-medium-and-above} {
-  $layout-size: medium-and-above;
-  @import "scss/all";
-}
-
-@media #{$bp-large} {
-  $layout-size: large;
-  @import "scss/all";
-}
