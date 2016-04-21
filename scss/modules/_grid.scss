@@ -37,6 +37,7 @@ $grid-gutter: 30px;
   // Centered columns
   .#{$size}-center {
     margin: 0 auto;
+    float: none;
   }
   @for $i from 1 through $grid-col-count {
     /* #$size */
