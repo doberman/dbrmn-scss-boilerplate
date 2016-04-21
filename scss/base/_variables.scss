@@ -9,10 +9,18 @@ $base-unit: 16px;
 $site-max-width: 1240px;
 
 /* Breakpoints */
+$breakpoints: (
+  sm: 0,
+  md: 640,
+  lg: 1024,
+) !default;
 
-$bp-medium: '(min-width: 550px) and (max-width: 1000px)';
-$bp-medium-and-above: '(min-width: 550px)';
-$bp-large: '(min-width: 1001px)';
+// Must be the same as in $breakpoints
+$breakpoint-classes: (sm md lg) !default;
+
+/* Typography */
+$body-font-family: serif;
+$header-font-family: sans-serif;
 
 /* Colors */
 
