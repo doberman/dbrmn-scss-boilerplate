@@ -34,6 +34,10 @@ $grid-gutter: 30px;
 
 /* _grid column generator */
 @include each-breakpoint {
+  // Centered columns
+  .#{$size}-center {
+    margin: 0 auto;
+  }
   @for $i from 1 through $grid-col-count {
     /* #$size */
     .#{$size}-#{$i} {
