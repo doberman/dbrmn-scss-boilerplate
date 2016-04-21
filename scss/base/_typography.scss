@@ -3,6 +3,31 @@
 /* _typography config */
 
 $base-font-size: 16px;
+$base-linge-height: 150%;
+$body-font-family: serif;
+
+$header-font-family: sans-serif;
+$header-margin-bottom: 0.5em;
+$header-lineheight: $base-linge-height;
+
+$heading-sizes: (
+  layout-default: (
+    'h1': 24,
+    'h2': 20,
+    'h3': 19,
+    'h4': 18,
+    'h5': 17,
+    'h6': 16,
+  ),
+  layout-medium: (
+    'h1': 48,
+    'h2': 40,
+    'h3': 31,
+    'h4': 25,
+    'h5': 20,
+    'h6': 16,
+  ),
+) !default;
 
 /* _typography mixins */
 
@@ -41,38 +66,39 @@ $base-font-size: 16px;
 }
 
 /* _typography heading styles */
-$heading-sizes: (
-  layout-default: (
-    'h1': 24,
-    'h2': 20,
-    'h3': 19,
-    'h4': 18,
-    'h5': 17,
-    'h6': 16,
-  ),
-  layout-medium: (
-    'h1': 48,
-    'h2': 40,
-    'h3': 31,
-    'h4': 25,
-    'h5': 20,
-    'h6': 16,
-  ),
-) !default;
 
-@each $size, $headers in $heading-sizes {
-    @each $header, $font-size in $headers {
-      #{$header} {
-        font-size: rem-calc($font-size);
-        margin-bottom: 0.5em;
-        
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $header-font-family;
+    margin-top: 0;
+    margin-bottom: $header-margin-bottom;
+    line-height: $header-lineheight;
+
+    small {
+      line-height: 0;
+    }
+  }
+
+  // Heading sizes
+  @each $size, $headers in $heading-sizes {
+    @include breakpoint($size) {
+      @each $header, $font-size in $headers {
+        #{$header} {
+          font-size: rem-calc($font-size);
+        }
       }
     }
-}
+  }
 
 /* _typography paragraphs */
 p {
   margin-bottom: 1em;
+  font-family: $body-font-family;
+  line-height: $base-linge-height;
 }
 
 /* _typography small */
