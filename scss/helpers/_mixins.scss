@@ -1,5 +1,4 @@
 /* _mixins.scss */
-
 @import '../vendor/triangle-mixin';
 
 @mixin clearfix { overflow: hidden; }
@@ -13,7 +12,26 @@
   }
 }
 
-/// Iterates through breakpoints defined in `$breakpoint-classes` and prints the CSS inside the mixin at each breakpoint's media query.
+
+
+/// Wraps a media query around the content you put inside the mixin. This mixin accepts a number of values:
+@mixin breakpoint($value) {
+  $str: breakpoint($value);
+
+  // If $str is still an empty string, no media query is needed
+  @if $str == '' {
+    @content;
+  }
+
+  // Otherwise, wrap the content in a media query
+  @else {
+    @media screen and #{$str} {
+      @content;
+    }
+  }
+}
+
+/* Iterates through breakpoints defined in `$breakpoint-classes` and prints the CSS inside the mixin at each breakpoint's media query. */
 @mixin each-breakpoint($small: true) {
   $map: $breakpoint-classes;
 
@@ -30,6 +48,7 @@
   }
 }
 
+/* Grid row */
 @mixin row(){
   @include clearfix-overflow-visible;
   & & {
@@ -38,3 +57,21 @@
   }
 }
 
+/* Grid col */
+@mixin col($size: 12, $position: left){
+
+  @if $position == left {
+    float: left;
+  }
+  @if $position == right {
+    float: right;
+  }
+  @if $position == center {
+    float: none;
+    margin: 0 auto;
+  }
+
+  width: (100% / $grid-col-count) * $size;
+  padding-right: rem-calc($grid-gutter) / 2;
+  padding-left: rem-calc($grid-gutter) / 2;
+}
