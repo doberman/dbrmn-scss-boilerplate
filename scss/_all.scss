@@ -4,28 +4,25 @@
 // mixins, such as layout-default or layout-large. Place them anywhere suitable,
 // below  the /* _media-queries */ import.
 
-/* _variables */
-
+/* _base */
 @import "base/variables";
 
-/* _mixins */
-
-@import "helpers/mixins";
-
 /* _media-queries */
-
 @import "media-queries/media-queries";
 
-/* _vendor */
-
-/* _base */
-
-@import "base/typography";
+/* -mixins */
+@import "helpers/mixins";
 
 /* _grid */
-
 @import "modules/grid";
+
+/* _typography */
+@import "base/typography";
+
+/* _vendor */
 
 /* _modules */
 
 /* Eg. @import "modules/buttons" */
+
+
