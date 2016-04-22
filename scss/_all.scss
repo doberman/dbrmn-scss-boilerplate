@@ -4,6 +4,14 @@
 // mixins, such as layout-default or layout-large. Place them anywhere suitable,
 // below  the /* _media-queries */ import.
 
+/* _variables */
+
+@import "base/variables";
+
+/* _mixins */
+
+@import "helpers/mixins";
+
 /* _media-queries */
 
 @import "media-queries/media-queries";
