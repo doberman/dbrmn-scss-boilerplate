@@ -8,6 +8,10 @@
 $base-unit: 16px; 
 $site-max-width: 1240px;
 
+/* Grid */
+$grid-col-count: 12;
+$grid-gutter: 30px;
+
 /* Breakpoints */
 $breakpoints: (
   sm: 0,
