@@ -1,5 +1,4 @@
 /* _media-queries.scss */
-
 @function breakpoint($val: sm) {
   // Size or keyword
   $bp: nth($val, 1);
@@ -76,23 +75,6 @@
   }
 
   @return $str;
-}
-
-/// Wraps a media query around the content you put inside the mixin. This mixin accepts a number of values:
-@mixin breakpoint($value) {
-  $str: breakpoint($value);
-
-  // If $str is still an empty string, no media query is needed
-  @if $str == '' {
-    @content;
-  }
-
-  // Otherwise, wrap the content in a media query
-  @else {
-    @media screen and #{$str} {
-      @content;
-    }
-  }
 }
 
 @if map-has-key($breakpoints, sm) {
