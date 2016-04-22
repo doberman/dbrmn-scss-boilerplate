@@ -2,9 +2,6 @@
 
 /* _grid config */
 
-$grid-col-count: 12;
-$grid-gutter: 30px;
-
 /* _grid base */
 @include breakpoint(sm) {
 
@@ -26,8 +23,6 @@ $grid-gutter: 30px;
     float: left;
   }
 
-  .col-opposite { float: right; }
-
   .hide-sm,
   .hide-sm-inline { display: none; }
 }
@@ -39,12 +34,13 @@ $grid-gutter: 30px;
     margin: 0 auto;
     float: none;
   }
+  .#{$size}-opposite {
+    float: right !important;
+  }
   @for $i from 1 through $grid-col-count {
     /* #$size */
     .#{$size}-#{$i} {
-      width: (100% / $grid-col-count) * $i;
-      padding-right: rem-calc($grid-gutter) / 2;
-      padding-left: rem-calc($grid-gutter) / 2;
+      @include col($i);
     }
   }
 }
