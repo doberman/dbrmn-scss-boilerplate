@@ -9,24 +9,19 @@
 
 /* _module small */
 
-@include layout-default {
-  // Put all default (i.e small) styles in here, and not outside the layout-default mixin.
+@include breakpoint(sm) {
+	// Put all default (i.e small) styles in here, and not outside the sm mixin.
 }
 
 /* _module medium */
 
-@include layout-medium {
-
-}
-
-/* _module medium-and-above */
-
-@include layout-medium-and-above {
-
+@include breakpoint(md) {
+	
 }
 
 /* _module large */
 
-@include layout-large {
+@include breakpoint(lg) {
 
 }
+
