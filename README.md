@@ -4,7 +4,7 @@ Base framework for projects using [SCSS](http://sass-lang.com/).
 
 ## Usage
 
-When creating a new SCSS module, use `scss/__template.scss` as a base.
+When creating a new SCSS module, use `scss/modules/__module.scss.template` as a base.
 
 In your new SCSS file, simply find and replace the string "template" with the name of the new module.
 
