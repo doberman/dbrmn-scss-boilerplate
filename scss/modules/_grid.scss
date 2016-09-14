@@ -7,7 +7,6 @@ $grid-col-padding: 15px;
 /* _grid base */
 @include layout-default {
   .container-fluid { width: 100%; }
-
   .container {
     margin-left: auto;
     margin-right: auto;
@@ -15,36 +14,57 @@ $grid-col-padding: 15px;
   }
 
   .row {
+    @include clearfix-overflow-visible;
     margin-right: auto;
     margin-left: auto;
-    
-    &:before,
-    &:after,
-    & &:before,
-    & &:after  {
-      content: " ";
-      display: table;
-    }
 
-    &:after,
-    & &:after {
-      clear: both;
-    }
-
+    // Align nested row columns with parent row columns.
     & & {
       margin-right: -$grid-col-padding;
       margin-left: -$grid-col-padding;
     }
-
   }
 
   .col {
     padding-right: $grid-col-padding;
     padding-left: $grid-col-padding;
+    position: relative;
   }
 
   @for $i from 1 through $grid-cols {
     .col-#{$i},
+      float: left;
+      width: (100% / $grid-cols) * $i;
+      padding-right: $grid-col-padding;
+      padding-left: $grid-col-padding;
+      position: relative;
+    }
+  }
+
+  @for $i from 1 through $grid-cols {
+    .col-push-#{$i},
+      float: left;
+      position: relative;
+      left: (100% / $grid-cols) * $i;
+    }
+    .col-pull-#{$i},
+      position: relative;
+      right: (100% / $grid-cols) * $i;
+      left: auto;
+      float: right;
+    }
+  }
+  .col-center,
+    float: none;
+    margin: 0 auto;
+  }
+  .col-opposite,
+  .col-sm-opposite { float: right; }
+}
+
+/* _grid small */
+@include layout-small {
+  @for $i from 1 through $grid-cols {
     .col-sm-#{$i} {
       float: left;
       width: (100% / $grid-cols) * $i;
@@ -53,42 +73,36 @@ $grid-col-padding: 15px;
       position: relative;
     }
   }
+
   @for $i from 1 through $grid-cols {
-    .col-push-#{$i},
     .col-sm-push-#{$i} {
       float: left;
       position: relative;
       left: (100% / $grid-cols) * $i;
     }
-    .col-pull-#{$i},
     .col-sm-pull-#{$i} {
       position: relative;
       right: (100% / $grid-cols) * $i;
       left: auto;
       float: right;
-      
     }
   }
-  .col-center,
   .col-sm-center {
     float: none;
     margin: 0 auto;
   }
-
-  .col-opposite,
-  .col-sm-opposite { float: right;  }
+  .col-sm-opposite { float: right; }
+  .hide-sm { display: none; }
 }
 
 /* _grid medium */
 @include layout-medium {
   .hide-md { display: none; }
-
   .container {
     padding-right: $base-unit * 2;
     padding-left: $base-unit * 2;
   }
-
-  .col-md-opposite { float: right;  }
+  .col-md-opposite { float: right; }
   .col-md-center {
     float: none;
     margin: 0 auto;
@@ -103,6 +117,7 @@ $grid-col-padding: 15px;
       position: relative;
     }
   }
+
   @for $i from 1 through $grid-cols {
     .col-push-#{$i},
     .col-md-push-#{$i} {
@@ -116,7 +131,6 @@ $grid-col-padding: 15px;
       right: (100% / $grid-cols) * $i;
       left: auto;
       float: right;
-      
     }
   }
 }
@@ -133,7 +147,7 @@ $grid-col-padding: 15px;
 /* _grid large */
 @include layout-large {
   .hide-lg { display: none; }
-  .col-lg-opposite { float: right;  }
+  .col-lg-opposite { float: right; }
   .col-lg-center {
     float: none;
     margin: 0 auto;
@@ -148,6 +162,7 @@ $grid-col-padding: 15px;
       position: relative;
     }
   }
+
   @for $i from 1 through $grid-cols {
     .col-push-#{$i},
     .col-lg-push-#{$i} {
@@ -161,7 +176,6 @@ $grid-col-padding: 15px;
       right: (100% / $grid-cols) * $i;
       left: auto;
       float: right;
-      
     }
   }
 }
