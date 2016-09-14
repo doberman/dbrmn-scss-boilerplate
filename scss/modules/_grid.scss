@@ -32,7 +32,7 @@ $grid-col-padding: 15px;
   }
 
   @for $i from 1 through $grid-cols {
-    .col-#{$i},
+    .col-#{$i} {
       float: left;
       width: (100% / $grid-cols) * $i;
       padding-right: $grid-col-padding;
@@ -42,19 +42,19 @@ $grid-col-padding: 15px;
   }
 
   @for $i from 1 through $grid-cols {
-    .col-push-#{$i},
+    .col-push-#{$i} {
       float: left;
       position: relative;
       left: (100% / $grid-cols) * $i;
     }
-    .col-pull-#{$i},
+    .col-pull-#{$i} {
       position: relative;
       right: (100% / $grid-cols) * $i;
       left: auto;
       float: right;
     }
   }
-  .col-center,
+  .col-center {
     float: none;
     margin: 0 auto;
   }
