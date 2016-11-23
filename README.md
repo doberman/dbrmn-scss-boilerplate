@@ -1,11 +1,10 @@
 # dbrmn-scss-framework
 
-Base framework for projects using [SCSS](http://sass-lang.com/). The purpose is to aid a developer on where to put new stuff, find where old stuff is and re-use stuff that can be re-used. To improve scalability and maintainability.
+A structure and boilerplate for projects using [SCSS](http://sass-lang.com/). The purpose is to aid a developers on where to put new stuff, find where old stuff is and re-use stuff that can be re-used. To improve scalability and maintainability.
 
 ## Structure
 
-This is a short summary of the structure and responsibility of each file and
-folder. For a more details see the header of each file separately.
+This is a short summary of the structure and responsibility of each file and folder. For a more details see the header of each file separately.
 
 ```
 /styles
@@ -16,6 +15,7 @@ folder. For a more details see the header of each file separately.
 | media-query-dependants.scss
 |   This file imports all modules that rely on the media-query mixins (contained
 |   in /helpers/_mixins.scss), such as _typography.scss or a module in /modules.
+|
 |
 base
 |   \
