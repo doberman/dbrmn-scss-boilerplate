@@ -1,10 +1,10 @@
 {
-  "name": "dbrmn-scss-framework",
+  "name": "dbrmn-scss-boilerplate",
   "version": "0.1.0",
-  "description": "A SCSS framework base structure",
+  "description": "A SCSS project boilerplate",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/doberman/dbrmn-scss-framework.git"
+    "url": "git+https://github.com/doberman/dbrmn-scss-boilerplate.git"
   },
   "author": {
     "name": "Doberman",
@@ -12,9 +12,9 @@
   },
   "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/doberman/dbrmn-scss-framework/issues"
+    "url": "https://github.com/doberman/dbrmn-scss-boilerplate/issues"
   },
-  "homepage": "https://github.com/doberman/dbrmn-scss-framework#readme",
+  "homepage": "https://github.com/doberman/dbrmn-scss-boilerplate#readme",
   "scripts": {
     "lint": "node_modules/.bin/stylelint \"src/**/*.scss\""
   },

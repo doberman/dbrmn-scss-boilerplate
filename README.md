@@ -1,4 +1,4 @@
-# dbrmn-scss-framework
+# dbrmn-scss-boilerplate
 
 A structure and boilerplate for projects using [SCSS](http://sass-lang.com/). The purpose is to aid a developers on where to put new stuff, find where old stuff is and re-use stuff that can be re-used. To improve scalability and maintainability.
 
