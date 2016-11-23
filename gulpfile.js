@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 const $ = require('gulp-load-plugins')();
 
-const onError = error => {
+const onError = function(error) {
   $.util.log(
     $.util.colors.cyan('Plumber') + $.util.colors.red(' found unhandled error:\n'),
     error.toString()
