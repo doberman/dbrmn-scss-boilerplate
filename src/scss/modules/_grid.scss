@@ -3,6 +3,12 @@
 /* _grid config */
 $grid-cols: 12;
 $grid-col-padding: 15px;
+$grid-use-css-grid: false;
+$grid-use-flexbox: false;
+
+@if ($grid-use-css-grid == true and $grid-use-flexbox == true) {
+  @error "CSS Grid Layout and flexbox can't both be activated at the same time. Choose one.";
+}
 
 /* _grid base */
 @include layout-default {
@@ -15,9 +21,22 @@ $grid-col-padding: 15px;
   }
 
   .row {
-    @include clearfix-overflow-visible;
-    margin-right: -$grid-col-padding;
-    margin-left: -$grid-col-padding;
+    @if $grid-use-css-grid {
+      display: grid;
+      grid-template-columns: repeat($grid-cols, (100% / $grid-cols));
+      grid-column-gap: $base-unit;
+      grid-row-gap: $base-unit;
+    } @else if $grid-use-flexbox {
+      display: flex;
+      flex: 0 1 auto;
+      flex-wrap: wrap;
+      margin-right: -$grid-col-padding;
+      margin-left: -$grid-col-padding;
+    } @else {
+      @include clearfix-overflow-visible;
+      margin-right: -$grid-col-padding;
+      margin-left: -$grid-col-padding;
+    }
   }
 
   .col {
@@ -30,10 +49,20 @@ $grid-col-padding: 15px;
   @for $i from 1 through $grid-cols {
     .col-#{$i},
     .col-sm-#{$i} {
-      float: left;
-      width: (100% / $grid-cols) * $i;
-      padding-right: $grid-col-padding;
-      padding-left: $grid-col-padding;
+      @if $grid-use-css-grid {
+        grid-column: col / span $i;
+      }
+      @else if $grid-use-flexbox {
+        flex-basis: (100% / $grid-cols) * $i;
+        max-width: (100% / $grid-cols) * $i;
+        padding-right: $grid-col-padding;
+        padding-left: $grid-col-padding;
+      } @else {
+        float: left;
+        width: (100% / $grid-cols) * $i;
+        padding-right: $grid-col-padding;
+        padding-left: $grid-col-padding;
+      }
     }
   }
 }
@@ -54,8 +83,20 @@ $grid-col-padding: 15px;
 
   @for $i from 1 through $grid-cols {
     .col-md-#{$i} {
-      float: left;
-      width: (100% / $grid-cols) * $i;
+      @if $grid-use-css-grid {
+        grid-column: col / span $i;
+      }
+      @else if $grid-use-flexbox {
+        flex-basis: (100% / $grid-cols) * $i;
+        max-width: (100% / $grid-cols) * $i;
+        padding-right: $grid-col-padding;
+        padding-left: $grid-col-padding;
+      } @else {
+        float: left;
+        width: (100% / $grid-cols) * $i;
+        padding-right: $grid-col-padding;
+        padding-left: $grid-col-padding;
+      }
     }
   }
 }
@@ -71,8 +112,20 @@ $grid-col-padding: 15px;
 
   @for $i from 1 through $grid-cols {
     .col-lg-#{$i} {
-      float: left;
-      width: (100% / $grid-cols) * $i;
+      @if $grid-use-css-grid {
+        grid-column: col / span $i;
+      }
+      @else if $grid-use-flexbox {
+        flex-basis: (100% / $grid-cols) * $i;
+        max-width: (100% / $grid-cols) * $i;
+        padding-right: $grid-col-padding;
+        padding-left: $grid-col-padding;
+      } @else {
+        float: left;
+        width: (100% / $grid-cols) * $i;
+        padding-right: $grid-col-padding;
+        padding-left: $grid-col-padding;
+      }
     }
   }
 }
