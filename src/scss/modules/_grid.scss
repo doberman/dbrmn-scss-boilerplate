@@ -12,7 +12,6 @@ $grid-use-flexbox: false;
 
 /* _grid base */
 @include layout-default {
-
   .container-fluid { width: 100%; }
 
   .container {
