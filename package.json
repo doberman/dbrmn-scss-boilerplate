@@ -6,7 +6,10 @@
     "type": "git",
     "url": "git+https://github.com/doberman/dbrmn-scss-framework.git"
   },
-  "author": "",
+  "author": {
+    "name": "Doberman",
+    "url": "http://doberman.io"
+  },
   "license": "BSD-3-Clause",
   "bugs": {
     "url": "https://github.com/doberman/dbrmn-scss-framework/issues"
