@@ -8,19 +8,17 @@ $base-font-size: 16px;
 /* _typography mixins */
 @mixin font-size($size: $base-font-size) {
   @if $size != none {
-    // if this is for the base element for `rem` (e.g. body)
-    // - use the `px` based `$base-font-size`
     @if $size == base {
+      // If this is for the base element for `rem` (e.g. body)
+      // - use the `px` based `$base-font-size`
       font-size: $base-font-size;
-
-    // if `$size` is not `px` based (e.g. if it's `em` based)
-    // - use only that value
     } @else if unit($size) != 'px' {
+      // If `$size` is not `px` based (e.g. if it's `em` based)
+      // - use only that value
       font-size: $size;
-
-    // ok, this is not the base for `rem` and `$size` is `px` based
-    // - use both the `px` based `$size` value and a calculated `rem` value
     } @else {
+      // Ok, this is not the base for `rem` and `$size` is `px` based
+      // - use both the `px` based `$size` value and a calculated `rem` value
       $rem: #{$size / $base-font-size}rem;
       font-size: $size;
       font-size: $rem;
@@ -29,10 +27,10 @@ $base-font-size: 16px;
 }
 
 @mixin font-base-attributes($size: none, $weight: none, $style: none, $line-height: none) {
-  @if $size != none { @include font-size($size) }
-  @if $weight != none { font-weight: $weight }
-  @if $style != none { font-style: $style }
-  @if $line-height != none { line-height: $line-height }
+  @if $size != none { @include font-size($size); }
+  @if $weight != none { font-weight: $weight; }
+  @if $style != none { font-style: $style; }
+  @if $line-height != none { line-height: $line-height; }
 }
 
 @mixin base-font($size: none, $weight: none, $style: none, $line-height: none) {
@@ -49,20 +47,20 @@ $base-font-size: 16px;
 
 /* _typography small-only */
 @include small-only {
-  body { background: red; }
+
 }
 
 /* _typography medium-only */
 @include medium-only {
-  body { background: green; }
+
 }
 
 /* _typography medium-and-above */
 @include medium-and-above {
-  body { background: pink; }
+
 }
 
 /* _typography large-and-above */
 @include large-and-above {
-  body { background: blue; }
+
 }
