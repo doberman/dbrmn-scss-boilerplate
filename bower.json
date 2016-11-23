@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "homepage": "https://github.com/doberman/dbrmn-scss-framework",
   "authors": [
-    { "name": "Doberman", "homepage": "http://doberman.se" }
+    {
+      "name": "Doberman",
+      "homepage": "http://doberman.io"
+    }
   ],
   "description": "A SCSS framework base structure",
   "keywords": [
