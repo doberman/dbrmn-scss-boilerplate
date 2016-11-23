@@ -1,9 +1,9 @@
-/* style.scss */
-
 /*
-  These are general media-query independent imports, other general imports that
-  are dependant on media-queries are imported within _all.scss.
-*/
+ * style.scss
+ *
+ * This file contain media-query independent imports, other imports that ARE
+ * dependent on media-queries are imported within media-query-dependants.scss
+ */
 
 @import 'base/variables';
 @import 'helpers/mixins';
