@@ -1,11 +1,13 @@
-/* _mixins.scss */
+/*
+ * _mixins.scss
+ */
 
-/**
+/*
  * General mixins
  */
 @mixin clearfix { overflow: hidden; }
 
-/**
+/*
  * Let's not care about IE6/7,
  * http://www.cssmojo.com/latest_new_clearfix_so_far
  */
@@ -17,11 +19,11 @@
   }
 }
 
-/**
+/*
  * Accessibility mixins
  */
 
-/**
+/*
  * http://a11yproject.com/posts/how-to-hide-content
  * https://developer.yahoo.com/blogs/ydn/clip-hidden-content-better-accessibility-53456.html
  */
@@ -35,8 +37,8 @@
   overflow: hidden;
 }
 
-/**
- * Media query mixins
+/*
+ * Media-query mixins
  */
 @mixin default {
   @if variable-exists(layout-size) {
