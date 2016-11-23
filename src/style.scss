@@ -5,34 +5,31 @@
   are dependant on media-queries are imported within _all.scss.
 */
 
-@import 'scss/base/variables';
-
-@import 'scss/helpers/mixins';
-@import 'scss/helpers/utils';
-
-@import 'scss/vendor/normalize';
-
-@import 'scss/base/base';
+@import 'base/variables';
+@import 'helpers/mixins';
+@import 'helpers/utils';
+@import 'vendor/normalize';
+@import 'base/base';
 
 $layout-size: default;
-@import 'scss/all';
+@import 'media-query-dependants';
 
-@media #{$bp-small} {
-  $layout-size: small;
-  @import 'scss/all';
+@media #{$breakpoint-small-only} {
+  $layout-size: small-only;
+  @import 'media-query-dependants';
 }
 
-@media #{$bp-medium} {
-  $layout-size: medium;
-  @import 'scss/all';
+@media #{$breakpoint-medium-only} {
+  $layout-size: medium-only;
+  @import 'media-query-dependants';
 }
 
-@media #{$bp-medium-and-above} {
+@media #{$breakpoint-medium-and-above} {
   $layout-size: medium-and-above;
-  @import 'scss/all';
+  @import 'media-query-dependants';
 }
 
-@media #{$bp-large} {
-  $layout-size: large;
-  @import 'scss/all';
+@media #{$breakpoint-large-and-above} {
+  $layout-size: large-and-above;
+  @import 'media-query-dependants';
 }

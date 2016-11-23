@@ -3,27 +3,32 @@
 // Simply do a copy-paste and a find and replace to substitute ex. _module with _buttons.
 
 /* _module config */
+@import '../helpers/module-dependencies';
+
 // Here is a good place to put strictly module specific variables or mixins.
 
 /* _module default */
-// Put all default (i.e small) styles in here, and not outside the layout-default mixin.
+/* _module default */
+@include default {
+  // Put all default (i.e small) styles in here, and not outside the layout-default mixin.
+}
 
-/* _module small */
-@include layout-small {
+/* _module small-only */
+@include small-only {
 
 }
 
-/* _module medium */
-@include layout-medium {
+/* _module medium-only */
+@include medium-only {
 
 }
 
 /* _module medium-and-above */
-@include layout-medium-and-above {
+@include medium-and-above {
 
 }
 
-/* _module large */
-@include layout-large {
+/* _module large-and-above */
+@include large-and-above {
 
 }

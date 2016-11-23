@@ -1,6 +1,8 @@
 /* _typography.scss */
 
 /* _typography config */
+@import '../helpers/module-dependencies';
+
 $base-font-size: 16px;
 
 /* _typography mixins */
@@ -38,30 +40,29 @@ $base-font-size: 16px;
   font-family: Helvetica, sans-serif;
 }
 
-/* _module default */
-body {
-  @include base-font(base);
+/* _typography default */
+@include default {
+  body {
+    @include base-font(base);
+  }
 }
 
-/* _typography small */
-@include layout-small {
-
+/* _typography small-only */
+@include small-only {
+  body { background: red; }
 }
 
-
-/* _typography medium */
-@include layout-medium {
-
+/* _typography medium-only */
+@include medium-only {
+  body { background: green; }
 }
-
 
 /* _typography medium-and-above */
-@include layout-medium-and-above {
-
+@include medium-and-above {
+  body { background: pink; }
 }
 
-
-/* _typography large */
-@include layout-large {
-
+/* _typography large-and-above */
+@include large-and-above {
+  body { background: blue; }
 }

@@ -5,10 +5,10 @@
 // under /* _module config */
 
 /* Breakpoints */
-$bp-small: '(max-width: 549px)';
-$bp-medium: '(min-width: 550px) and (max-width: 1000px)';
-$bp-medium-and-above: '(min-width: 550px)';
-$bp-large: '(min-width: 1001px)';
+$breakpoint-small-only: '(max-width: 549px)';
+$breakpoint-medium-only: '(min-width: 550px) and (max-width: 1000px)';
+$breakpoint-medium-and-above: '(min-width: 550px)';
+$breakpoint-large-and-above: '(min-width: 1001px)';
 
 /* Colors */
 $color-white: #fff;
