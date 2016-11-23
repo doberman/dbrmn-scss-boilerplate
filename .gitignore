@@ -1,5 +1,7 @@
 .sass-cache
 .DS_Store
+node_modules
 style.css
 style.css.map
 should-be-empty.css
+tests/dist
