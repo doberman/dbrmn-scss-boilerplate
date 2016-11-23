@@ -1,0 +1,66 @@
+/* _typography.scss */
+
+/* _typography config */
+@import '../helpers/module-dependencies';
+
+$base-font-size: 16px;
+
+/* _typography mixins */
+@mixin font-size($size: $base-font-size) {
+  @if $size != none {
+    @if $size == base {
+      // if this is for the base element for `rem` (e.g. body)
+      // - use the `px` based `$base-font-size`
+      font-size: $base-font-size;
+    } @else if unit($size) != 'px' {
+      // if `$size` is not `px` based (e.g. if it's `em` based)
+      // - use only that value
+      font-size: $size;
+    } @else {
+      // ok, this is not the base for `rem` and `$size` is `px` based
+      // - use both the `px` based `$size` value and a calculated `rem` value
+      $rem: #{$size / $base-font-size}rem;
+      font-size: $size;
+      font-size: $rem;
+    }
+  }
+}
+
+@mixin font-base-attributes($size: none, $weight: none, $style: none, $line-height: none) {
+  @if $size != none { @include font-size($size); }
+  @if $weight != none { font-weight: $weight; }
+  @if $style != none { font-style: $style; }
+  @if $line-height != none { line-height: $line-height; }
+}
+
+@mixin base-font($size: none, $weight: none, $style: none, $line-height: none) {
+  @include font-base-attributes($size, $weight, $style, $line-height);
+  font-family: Helvetica, sans-serif;
+}
+
+/* _typography default */
+@include default {
+  body {
+    @include base-font(base);
+  }
+}
+
+/* _typography small-only */
+@include small-only {
+
+}
+
+/* _typography medium-only */
+@include medium-only {
+
+}
+
+/* _typography medium-and-above */
+@include medium-and-above {
+
+}
+
+/* _typography large-and-above */
+@include large-and-above {
+
+}

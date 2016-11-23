@@ -1,0 +1,95 @@
+/* _mixins.scss */
+
+/**
+ * General mixins
+ */
+@mixin clearfix { overflow: hidden; }
+
+/**
+ * Let's not care about IE6/7,
+ * http://www.cssmojo.com/latest_new_clearfix_so_far
+ */
+@mixin clearfix-overflow-visible {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+/**
+ * Accessibility mixins
+ */
+
+/**
+ * http://a11yproject.com/posts/how-to-hide-content
+ * https://developer.yahoo.com/blogs/ydn/clip-hidden-content-better-accessibility-53456.html
+ */
+@mixin visually-hidden {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+/**
+ * Media query mixins
+ */
+@mixin default {
+  @if variable-exists(layout-size) {
+    @if $layout-size == default {
+      @content;
+    }
+  }
+}
+
+@mixin small-only {
+  @if variable-exists(layout-size) {
+    @if $layout-size == small-only {
+      @content;
+    }
+  } @else {
+    @media #{$breakpoint-medium-only} {
+      @content;
+    }
+  }
+}
+
+@mixin medium-only {
+  @if variable-exists(layout-size) {
+    @if $layout-size == medium-only {
+      @content;
+    }
+  } @else {
+    @media #{$breakpoint-medium-only} {
+      @content;
+    }
+  }
+}
+
+@mixin medium-and-above {
+  @if variable-exists(layout-size) {
+    @if $layout-size == medium-and-above {
+      @content;
+    }
+  } @else {
+    @media #{$breakpoint-medium-and-above} {
+      @content;
+    }
+  }
+}
+
+@mixin large-and-above {
+  @if variable-exists(layout-size) {
+    @if $layout-size == large-and-above {
+      @content;
+    }
+  } @else {
+    @media #{$breakpoint-large-and-above} {
+      @content;
+    }
+  }
+}
