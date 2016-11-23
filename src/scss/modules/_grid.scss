@@ -3,10 +3,10 @@
 /* _grid config */
 $grid-cols: 12;
 $grid-col-padding: 15px;
-$grid-layout: false;
-$flexbox: false;
+$grid-use-css-grid: false;
+$grid-use-flexbox: false;
 
-@if ($grid-layout == true and $flexbox == true) {
+@if ($grid-use-css-grid == true and $grid-use-flexbox == true) {
   @error "CSS Grid Layout and flexbox can't both be activated at the same time. Choose one.";
 }
 
@@ -22,12 +22,12 @@ $flexbox: false;
   }
 
   .row {
-    @if $grid-layout {
+    @if $grid-use-css-grid {
       display: grid;
-      grid-template-columns: repeat($grid-cols, (100%/$grid-cols));
+      grid-template-columns: repeat($grid-cols, (100% / $grid-cols));
       grid-column-gap: $base-unit;
       grid-row-gap: $base-unit;
-    } @else if $flexbox {
+    } @else if $grid-use-flexbox {
       display: flex;
       flex: 0 1 auto;
       flex-wrap: wrap;
@@ -50,10 +50,10 @@ $flexbox: false;
   @for $i from 1 through $grid-cols {
     .col-#{$i},
     .col-sm-#{$i} {
-      @if $grid-layout {
+      @if $grid-use-css-grid {
         grid-column: col / span $i;
       }
-      @else if $flexbox {
+      @else if $grid-use-flexbox {
         flex-basis: (100% / $grid-cols) * $i;
         max-width: (100% / $grid-cols) * $i;
         padding-right: $grid-col-padding;
@@ -84,10 +84,10 @@ $flexbox: false;
 
   @for $i from 1 through $grid-cols {
     .col-md-#{$i} {
-      @if $grid-layout {
+      @if $grid-use-css-grid {
         grid-column: col / span $i;
       }
-      @else if $flexbox {
+      @else if $grid-use-flexbox {
         flex-basis: (100% / $grid-cols) * $i;
         max-width: (100% / $grid-cols) * $i;
         padding-right: $grid-col-padding;
@@ -113,10 +113,10 @@ $flexbox: false;
 
   @for $i from 1 through $grid-cols {
     .col-lg-#{$i} {
-      @if $grid-layout {
+      @if $grid-use-css-grid {
         grid-column: col / span $i;
       }
-      @else if $flexbox {
+      @else if $grid-use-flexbox {
         flex-basis: (100% / $grid-cols) * $i;
         max-width: (100% / $grid-cols) * $i;
         padding-right: $grid-col-padding;
