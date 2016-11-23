@@ -10,6 +10,11 @@ const onError = error => {
   this.emit('end');
 }
 
+gulp.task('copy-html', () => {
+  return gulp.src('tests/src/**/*.html')
+    .pipe(gulp.dest('tests/dist'));
+});
+
 gulp.task('sass', () => {
   return gulp.src('src/style.scss')
     .pipe($.plumber(onError))
@@ -18,7 +23,8 @@ gulp.task('sass', () => {
     .pipe(gulp.dest('tests/dist/css'));
 });
 
-gulp.task('watch', ['sass'], () => {
+gulp.task('watch', ['copy-html', 'sass'], () => {
+  gulp.watch('tests/src/**/*.html', ['copy-html']);
   gulp.watch('src/**/*.scss', ['sass']);
 });
 
