@@ -1,11 +1,13 @@
-/* _mixins.scss */
+/*
+ * _mixins.scss
+ */
 
-/**
+/*
  * General mixins
  */
 @mixin clearfix { overflow: hidden; }
 
-/**
+/*
  * Let's not care about IE6/7,
  * http://www.cssmojo.com/latest_new_clearfix_so_far
  */
@@ -17,11 +19,46 @@
   }
 }
 
-/**
+/*
+ * Typography mixins
+ */
+@mixin font-size($size: $font--base-size) {
+  @if $size != none {
+    @if $size == base {
+      // If this is for the base element for `rem` (e.g. body)
+      // - use the `px` based `$base-font-size`
+      font-size: $font--base-size;
+    } @else if unit($size) != 'px' {
+      // If `$size` is not `px` based (e.g. if it's `em` based)
+      // - use only that value
+      font-size: $size;
+    } @else {
+      // Ok, this is not the base for `rem` and `$size` is `px` based
+      // - use both the `px` based `$size` value and a calculated `rem` value
+      $rem: #{$size / $font--base-size}rem;
+      font-size: $size;
+      font-size: $rem;
+    }
+  }
+}
+
+@mixin font-base-attributes($size: none, $weight: none, $style: none, $line-height: none) {
+  @if $size != none { @include font-size($size); }
+  @if $weight != none { font-weight: $weight; }
+  @if $style != none { font-style: $style; }
+  @if $line-height != none { line-height: $line-height; }
+}
+
+@mixin base-font($size: none, $weight: none, $style: none, $line-height: none) {
+  @include font-base-attributes($size, $weight, $style, $line-height);
+  font-family: $font--base-family;
+}
+
+/*
  * Accessibility mixins
  */
 
-/**
+/*
  * http://a11yproject.com/posts/how-to-hide-content
  * https://developer.yahoo.com/blogs/ydn/clip-hidden-content-better-accessibility-53456.html
  */
@@ -35,8 +72,8 @@
   overflow: hidden;
 }
 
-/**
- * Media query mixins
+/*
+ * Media-query mixins
  */
 @mixin default {
   @if variable-exists(layout-size) {
@@ -52,7 +89,7 @@
       @content;
     }
   } @else {
-    @media #{$breakpoint-medium-only} {
+    @media #{$breakpoint--medium-only} {
       @content;
     }
   }
@@ -64,7 +101,7 @@
       @content;
     }
   } @else {
-    @media #{$breakpoint-medium-only} {
+    @media #{$breakpoint--medium-only} {
       @content;
     }
   }
@@ -76,7 +113,7 @@
       @content;
     }
   } @else {
-    @media #{$breakpoint-medium-and-above} {
+    @media #{$breakpoint--medium-and-above} {
       @content;
     }
   }
@@ -88,7 +125,7 @@
       @content;
     }
   } @else {
-    @media #{$breakpoint-large-and-above} {
+    @media #{$breakpoint--large-and-above} {
       @content;
     }
   }

@@ -1,15 +1,16 @@
-/* _all.scss */
+/*
+ * media-query-dependants.scss
+ *
+ * This is the place where you would include any SCSS that is dependant on the
+ * media-query mixins (such as small-only or large-and-above).
+ */
 
-// This is the place where you would include any SCSS that is using the media-query
-// mixins, such as layout-default or layout-large. Place them anywhere suitable,
-// below  the /* _media-queries */ import.
-
-/* _media-queries */
-
-/* _vendor */
-
-/* _base */
+/*
+ * Base
+ */
 @import 'base/typography';
 
-/* _modules */
+/*
+ * Modules
+ */
 /* Eg. @import 'modules/buttons' */
