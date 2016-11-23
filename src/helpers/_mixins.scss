@@ -52,7 +52,7 @@
       @content;
     }
   } @else {
-    @media #{$breakpoint-medium-only} {
+    @media #{$breakpoint--medium-only} {
       @content;
     }
   }
@@ -64,7 +64,7 @@
       @content;
     }
   } @else {
-    @media #{$breakpoint-medium-only} {
+    @media #{$breakpoint--medium-only} {
       @content;
     }
   }
@@ -76,7 +76,7 @@
       @content;
     }
   } @else {
-    @media #{$breakpoint-medium-and-above} {
+    @media #{$breakpoint--medium-and-above} {
       @content;
     }
   }
@@ -88,7 +88,7 @@
       @content;
     }
   } @else {
-    @media #{$breakpoint-large-and-above} {
+    @media #{$breakpoint--large-and-above} {
       @content;
     }
   }

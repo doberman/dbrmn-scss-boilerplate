@@ -14,22 +14,22 @@
 $layout-size: default;
 @import 'media-query-dependants';
 
-@media #{$breakpoint-small-only} {
+@media #{$breakpoint--small-only} {
   $layout-size: small-only;
   @import 'media-query-dependants';
 }
 
-@media #{$breakpoint-medium-only} {
+@media #{$breakpoint--medium-only} {
   $layout-size: medium-only;
   @import 'media-query-dependants';
 }
 
-@media #{$breakpoint-medium-and-above} {
+@media #{$breakpoint--medium-and-above} {
   $layout-size: medium-and-above;
   @import 'media-query-dependants';
 }
 
-@media #{$breakpoint-large-and-above} {
+@media #{$breakpoint--large-and-above} {
   $layout-size: large-and-above;
   @import 'media-query-dependants';
 }
