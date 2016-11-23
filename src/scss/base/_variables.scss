@@ -4,11 +4,6 @@
 // to a module it might be a good idea to include them in the module itself,
 // under /* _module config */
 
-/* Base */
-$base-unit: 10px;
-$site-max-width: 1240px;
-
-
 /* Breakpoints */
 $bp-small: '(max-width: 549px)';
 $bp-medium: '(min-width: 550px) and (max-width: 1000px)';
