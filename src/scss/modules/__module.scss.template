@@ -6,9 +6,7 @@
 // Here is a good place to put strictly module specific variables or mixins.
 
 /* _module default */
-@include layout-default {
-  // Put all default (i.e small) styles in here, and not outside the layout-default mixin.
-}
+// Put all default (i.e small) styles in here, and not outside the layout-default mixin.
 
 /* _module small */
 @include layout-small {

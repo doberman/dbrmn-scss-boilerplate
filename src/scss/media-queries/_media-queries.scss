@@ -6,12 +6,6 @@
   }
 }
 
-@mixin layout-default {
-  @include respond-to(default) {
-    @content;
-  }
-}
-
 @mixin layout-small {
   @include respond-to(small) {
     @content;
