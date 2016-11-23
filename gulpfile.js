@@ -12,15 +12,24 @@ const onError = error => {
 
 gulp.task('copy-html', () => {
   return gulp.src('tests/src/**/*.html')
+    .pipe($.connect.reload())
     .pipe(gulp.dest('tests/dist'));
 });
 
 gulp.task('sass', () => {
-  return gulp.src('src/style.scss')
+  return gulp.src(['src/style.scss', 'src/should-be-empty.scss'])
     .pipe($.plumber(onError))
     .pipe($.sass())
     .pipe($.plumber.stop())
+    .pipe($.connect.reload())
     .pipe(gulp.dest('tests/dist/css'));
+});
+
+gulp.task('connect', () => {
+  $.connect.server({
+    root: 'tests/dist',
+    livereload: true
+  });
 });
 
 gulp.task('watch', ['copy-html', 'sass'], () => {
@@ -28,4 +37,4 @@ gulp.task('watch', ['copy-html', 'sass'], () => {
   gulp.watch('src/**/*.scss', ['sass']);
 });
 
-gulp.task('default', ['watch']);
+gulp.task('default', ['watch', 'connect']);
