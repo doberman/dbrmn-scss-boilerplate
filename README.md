@@ -1,9 +1,9 @@
 # dbrmn-scss-boilerplate
 
-A structure and boilerplate for projects using [SCSS](http://sass-lang.com/). The purpose is to aid developers on where to put new stuff, find where old stuff is and re-use stuff that can be re-used. To improve scalability and maintainability.
+A structure and boilerplate for projects using [SCSS](http://sass-lang.com/). The purpose
+of the boilerplate is to increase development speed, scalability, and maintainability.
 
 ## Structure
-
 This is a short summary of the structure and responsibility of each file and folder. For more details see the header of each file separately.
 
 ```
@@ -72,14 +72,20 @@ vendor
 
 ```
 
-## Middleman & `compass-import-once`
+## Stylelint
+We use `stylelint` to ensure a consistent style. See `/src/helpers/_styleguide-example.scss`
+for an example file that adheres to the `/.stylelintrc` rules. To lint manually run
+`npm run lint`, this task is also run before each commit as a pre-commit hook.
 
+## Gulp
+To compile the SCSS run `npm install && gulp`. This is handy to ensure you don't
+break anything while making changes.
+
+## Middleman & `compass-import-once`
 If you're using [`compass-import-once`](https://rubygems.org/gems/compass-import-once/) (eg Middleman) you have to force `/media-query-dependants.scss` to be imported several times into `/style.scss`. This is done by adding a `!` at the end of the file to be imported, ie `media-query-dependants.scss!`.
 
 ## Contributing
-
 Everyone is more than welcome to contribute! More info on how to contribute is available in [CONTRIBUTING.md](CONTRIBUTING.md) (this info is also available when submitting a pull request).
 
 ## License
-
 Licensed under the new BSD 3-clause license. See the separate [LICENSE](LICENSE) file.
