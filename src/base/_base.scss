@@ -1,65 +1,21 @@
-/* _base.scss */
+/*
+ * _base.scss
+ *
+ * This is a good place to put 'opinionated' resets.
+ */
 
-// This is a good place to put 'opinionated' resets, such as removing
-// -webkit-appearance on certain elements or to include very general
-// project specific styles.
-
-html {
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
+html { box-sizing: border-box; }
 
 body {
-  color: $color-typography-base;
-  background-color: $color-white;
-
-  // Set a standardized guaranteed line-height of 1, since the default interpreted
-  // value of 'normal' is browser specific
+  // Set a standardized guaranteed line-height of 1, since the default
+  // interpreted value of 'normal' is browser specific
   // http://jaydenseric.com/blog/forget-normalize-or-resets-lay-your-own-css-foundation
   line-height: 1;
 }
-* { box-sizing: border-box; }
 
+*,
 *:before,
 *:after { box-sizing: inherit; }
-
-ul,
-ol {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-a { text-decoration: none; }
-
-h1, h2, h3, h4, h5, p { margin: 0; } /* stylelint-disable-line */
-
-input,
-textarea,
-button {
-  border: none;
-  padding: 0;
-}
-
-button { -webkit-font-smoothing: inherit; }
-
-input[type="text"],
-input[type="password"],
-textarea { -webkit-appearance: none; }
-
-// Fixes https://bugzilla.mozilla.org/show_bug.cgi?id=140562
-::-moz-focus-inner {
-  padding: 0;
-  border: 0;
-}
-
-fieldset {
-  border: none;
-  padding: 0;
-  margin: 0;
-}
 
 // Prevent overflowing of images in fluid containers
 img { max-width: 100%; }

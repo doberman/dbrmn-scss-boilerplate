@@ -1,16 +1,36 @@
-/* _variables.scss */
+/*
+ * _variables.scss
+ *
+ * This file contains SCSS variables that are used globally in the project.
+ * Keep variables namespaced with the concern of the variable i.e.
+ * $color--<color> or $font--<size-default>.
+ * Variables that are local to a file can be placed in the file itself.
+ */
 
-// These are strictly global variables. If you want to define variables local
-// to a module it might be a good idea to include them in the module itself,
-// under /* _module config */
+/*
+ * Breakpoints
+ */
+$breakpoint--small-only: '(max-width: 549px)';
+$breakpoint--medium-only: '(min-width: 550px) and (max-width: 1000px)';
+$breakpoint--medium-and-above: '(min-width: 550px)';
+$breakpoint--large-and-above: '(min-width: 1001px)';
 
-/* Breakpoints */
-$breakpoint-small-only: '(max-width: 549px)';
-$breakpoint-medium-only: '(min-width: 550px) and (max-width: 1000px)';
-$breakpoint-medium-and-above: '(min-width: 550px)';
-$breakpoint-large-and-above: '(min-width: 1001px)';
+/*
+ * Typography
+ */
+$font--base-family: Helvetica, sans-serif;
+$font--base-size: 16px;
 
-/* Colors */
-$color-white: #fff;
-$color-black: #000;
-$color-typography-base: $color-black;
+/*
+ * Colors
+ */
+$color--white: #fff;
+$color--black: #000;
+$color--typography-base: $color--black;
+
+/*
+ * Easings
+ */
+$ease--in-out: cubic-bezier(0.45, 0.675, 0, 1);
+$ease--in-out-fast: cubic-bezier(0.65, 0.225, 0, 1);
+$ease--in-out-slow: cubic-bezier(0.425, 0.725, 0, 1);

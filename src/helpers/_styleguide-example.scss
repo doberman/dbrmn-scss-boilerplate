@@ -1,0 +1,78 @@
+/*
+ * _styleguide-example.scss
+ *
+ * This is an example file that adheres to our .stylelintrc rules and style.
+ */
+
+$sass-variable: 10px;
+
+/*
+ * Multi-line comment
+ */
+.base-1,
+.base-2,
+.base-3__element[type="text"] {
+  background: linear-gradient(#fff, rgba(0, 0, 0, 0.8));
+  box-sizing: border-box;
+  display: block;
+  color: #333;
+}
+
+.base-1__element,
+.base-2__element:not(:first-child) {
+  padding: 10px;
+  top: calc(calc(1em * 2) / 3);
+}
+
+.base-1__element { width: 10%; }
+.base-2__element { width: 20%; }
+.base-3__element { width: 30%; }
+
+/* Single-line comment */
+// Single-line comment
+
+@media (min-width >= 60em) {
+  .base-1 {
+    /* Flush to parent comment */
+    transform: translate(1, 1) scale(3);
+  }
+}
+
+@media (orientation: portrait), projection and (color) {
+  .base-1 + .base-2 {
+    background: color(rgb(0, 0, 0) lightness(50%));
+    font-family: 'Helvetica', 'Arial Black', sans-serif;
+  }
+}
+
+/* Flush single line comment */
+@media screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
+  .base-1 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 5rem;
+    height: 10rem;
+    padding: ($sass-variable * 2);
+    margin: 10px;
+    margin-bottom: 5px;
+    background-image: repeating-linear-gradient(-45deg, transparent, #fff 25px, rgba(255, 255, 255, 1) 50px);
+    box-shadow: 0 1px 1px #000, 0 1px 0 #fff, 2px 2px 1px 1px #ccc inset;
+
+    h1 { font-size: 1.2em; }
+    p { font-size: 0.9em; }
+
+    &:after {
+      content: '→';
+      background-image: url('x.svg');
+    }
+
+    &:before { content: 'Item: '; }
+  }
+
+  .base-1__element {
+    background: #000;
+
+    &--is-active { background: #f00; }
+  }
+}

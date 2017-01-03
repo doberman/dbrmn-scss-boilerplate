@@ -1,9 +1,9 @@
-/* style.scss */
-
 /*
-  These are general media-query independent imports, other general imports that
-  are dependant on media-queries are imported within _all.scss.
-*/
+ * style.scss
+ *
+ * This file contain media-query independent imports, other imports that ARE
+ * dependent on media-queries are imported within media-query-dependants.scss
+ */
 
 @import 'base/variables';
 @import 'helpers/mixins';
@@ -14,22 +14,22 @@
 $layout-size: default;
 @import 'media-query-dependants';
 
-@media #{$breakpoint-small-only} {
+@media #{$breakpoint--small-only} {
   $layout-size: small-only;
   @import 'media-query-dependants';
 }
 
-@media #{$breakpoint-medium-only} {
+@media #{$breakpoint--medium-only} {
   $layout-size: medium-only;
   @import 'media-query-dependants';
 }
 
-@media #{$breakpoint-medium-and-above} {
+@media #{$breakpoint--medium-and-above} {
   $layout-size: medium-and-above;
   @import 'media-query-dependants';
 }
 
-@media #{$breakpoint-large-and-above} {
+@media #{$breakpoint--large-and-above} {
   $layout-size: large-and-above;
   @import 'media-query-dependants';
 }

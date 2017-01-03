@@ -1,0 +1,47 @@
+/*
+ * _module-template.scss
+ *
+ * This is the basic layout of a shared module and might be handy when creating
+ * a new one.
+ */
+
+/* _module-template config */
+
+/* Here is a good place to put file-specific variables or mixins. */
+
+/* _module-template default */
+@include default {
+  /* These are the default module styles, i.e. for every screen size */
+}
+
+/* _module-template small-only */
+@include small-only {
+  /*
+   * These styles will only apply to small layouts as defined by
+   * $breakpoint--small-only in base/_variables.scss
+   */
+}
+
+/* _module-template medium-only */
+@include medium-only {
+  /*
+   * These styles will only apply to medium layouts as defined by
+   * $breakpoint--medium-only in base/_variables.scss
+   */
+}
+
+/* _module-template medium-and-above */
+@include medium-and-above {
+  /*
+   * These styles will only apply to medium layouts and above as defined by
+   * $breakpoint--medium-and-above in base/_variables.scss
+   */
+}
+
+/* _module-template large-and-above */
+@include large-and-above {
+  /*
+   * These styles will only apply to large and above layouts as defined by
+   * $breakpoint--large-and-above in base/_variables.scss
+   */
+}
