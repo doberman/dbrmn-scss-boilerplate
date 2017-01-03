@@ -82,7 +82,7 @@ To compile the SCSS run `npm install && gulp`. This is handy to ensure you don't
 break anything while making changes.
 
 ## Middleman & `compass-import-once`
-If you're using [`compass-import-once`](https://rubygems.org/gems/compass-import-once/) (eg Middleman) you have to force `/media-query-dependants.scss` to be imported several times into `/style.scss`. This is done by adding a `!` at the end of the file to be imported, ie `media-query-dependants.scss!`.
+If you're using [`compass-import-once`](https://rubygems.org/gems/compass-import-once/) (e.g. Middleman) you have to force `/media-query-dependants.scss` to be imported several times into `/style.scss`. This is done by adding a `!` at the end of the file to be imported, i.e. `media-query-dependants.scss!`.
 
 ## Contributing
 Everyone is more than welcome to contribute! More info on how to contribute is available in [CONTRIBUTING.md](CONTRIBUTING.md) (this info is also available when submitting a pull request).
