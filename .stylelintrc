@@ -3,6 +3,7 @@
   # here; https://github.com/stylelint/stylelint-config-standard
   "extends": "stylelint-config-standard",
   "rules": {
+    "function-url-quotes": "always",
     "comment-empty-line-before": null,
     "declaration-empty-line-before": null,
     "block-closing-brace-newline-after": null,
