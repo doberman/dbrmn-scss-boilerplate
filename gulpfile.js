@@ -10,31 +10,18 @@ const onError = function(error) {
   this.emit('end');
 }
 
-gulp.task('copy-html', () => {
-  return gulp.src('tests/src/**/*.html')
-    .pipe($.connect.reload())
-    .pipe(gulp.dest('tests/dist'));
-});
-
 gulp.task('sass', () => {
-  return gulp.src(['src/style.scss', 'src/should-be-empty.scss'])
+  return gulp.src(['src/style.scss'])
     .pipe($.plumber(onError))
     .pipe($.sass())
     .pipe($.plumber.stop())
     .pipe($.connect.reload())
-    .pipe(gulp.dest('tests/dist/css'));
+    .pipe(gulp.dest('dist/css'));
 });
 
-gulp.task('connect', () => {
-  $.connect.server({
-    root: 'tests/dist',
-    livereload: true
-  });
-});
 
-gulp.task('watch', ['copy-html', 'sass'], () => {
-  gulp.watch('tests/src/**/*.html', ['copy-html']);
+gulp.task('watch', ['sass'], () => {
   gulp.watch('src/**/*.scss', ['sass']);
 });
 
-gulp.task('default', ['watch', 'connect']);
+gulp.task('default', ['watch']);
