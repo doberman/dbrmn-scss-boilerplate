@@ -89,7 +89,7 @@
       @content;
     }
   } @else {
-    @media #{$breakpoint--medium-only} {
+    @media #{$breakpoint--small-only} {
       @content;
     }
   }
