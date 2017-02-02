@@ -1,3 +1,5 @@
+/* jshint esversion: 6 */
+
 const gulp = require('gulp');
 const $ = require('gulp-load-plugins')();
 
@@ -8,7 +10,7 @@ const onError = function(error) {
   );
 
   this.emit('end');
-}
+};
 
 gulp.task('sass', () => {
   return gulp.src(['src/style.scss'])
