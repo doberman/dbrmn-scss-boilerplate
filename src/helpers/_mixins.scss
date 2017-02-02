@@ -80,6 +80,8 @@
     @if $layout-size == default {
       @content;
     }
+  } @else {
+    @content;
   }
 }
 
