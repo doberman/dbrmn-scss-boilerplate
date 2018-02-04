@@ -22,12 +22,12 @@
 /*
  * Typography mixins
  */
-@mixin font-size($size: $font--base-size) {
+@mixin font-size($size: $font-base-size) {
   @if $size != none {
     @if $size == base {
       // If this is for the base element for `rem` (e.g. body)
       // - use the `px` based `$base-font-size`
-      font-size: $font--base-size;
+      font-size: $font-base-size;
     } @else if unit($size) != 'px' {
       // If `$size` is not `px` based (e.g. if it's `em` based)
       // - use only that value
@@ -35,7 +35,7 @@
     } @else {
       // Ok, this is not the base for `rem` and `$size` is `px` based
       // - use both the `px` based `$size` value and a calculated `rem` value
-      $rem: #{$size / $font--base-size}rem;
+      $rem: #{$size / $font-base-size}rem;
       font-size: $size;
       font-size: $rem;
     }
@@ -51,7 +51,7 @@
 
 @mixin base-font($size: none, $weight: none, $style: none, $line-height: none) {
   @include font-base-attributes($size, $weight, $style, $line-height);
-  font-family: $font--base-family;
+  font-family: $font-base-family;
 }
 
 /*
@@ -70,63 +70,4 @@
   height: 1px;
   width: 1px;
   overflow: hidden;
-}
-
-/*
- * Media-query mixins
- */
-@mixin default {
-  @if variable-exists(layout-size) {
-    @if $layout-size == default {
-      @content;
-    }
-  }
-}
-
-@mixin small-only {
-  @if variable-exists(layout-size) {
-    @if $layout-size == small-only {
-      @content;
-    }
-  } @else {
-    @media #{$breakpoint-small-only} {
-      @content;
-    }
-  }
-}
-
-@mixin medium-only {
-  @if variable-exists(layout-size) {
-    @if $layout-size == medium-only {
-      @content;
-    }
-  } @else {
-    @media #{$breakpoint-medium-only} {
-      @content;
-    }
-  }
-}
-
-@mixin medium-and-above {
-  @if variable-exists(layout-size) {
-    @if $layout-size == medium-and-above {
-      @content;
-    }
-  } @else {
-    @media #{$breakpoint-medium-and-above} {
-      @content;
-    }
-  }
-}
-
-@mixin large-and-above {
-  @if variable-exists(layout-size) {
-    @if $layout-size == large-and-above {
-      @content;
-    }
-  } @else {
-    @media #{$breakpoint--large-and-above} {
-      @content;
-    }
-  }
 }

@@ -1,8 +1,5 @@
 /*
  * style.scss
- *
- * This file contain media-query independent imports, other imports that ARE
- * dependent on media-queries are imported within media-query-dependants.scss
  */
 
 @import 'base/variables';
@@ -10,26 +7,4 @@
 @import 'helpers/utils';
 @import 'vendor/normalize';
 @import 'base/base';
-
-$layout-size: default;
-@import 'media-query-dependants';
-
-$layout-size: small-only;
-@media #{$breakpoint-small-only} {
-  @import 'media-query-dependants';
-}
-
-$layout-size: medium-only;
-@media #{$breakpoint-medium-only} {
-  @import 'media-query-dependants';
-}
-
-$layout-size: medium-and-above;
-@media #{$breakpoint-medium-and-above} {
-  @import 'media-query-dependants';
-}
-
-$layout-size: large-and-above;
-@media #{$breakpoint-large-and-above} {
-  @import 'media-query-dependants';
-}
+@import 'base/typography';
