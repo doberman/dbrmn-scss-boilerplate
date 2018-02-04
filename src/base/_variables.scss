@@ -10,10 +10,15 @@
 /*
  * Breakpoints
  */
-$breakpoint-small-only: '(max-width: 549px)';
-$breakpoint-medium-only: '(min-width: 550px) and (max-width: 1000px)';
-$breakpoint-medium-and-above: '(min-width: 550px)';
-$breakpoint-large-and-above: '(min-width: 1001px)';
+$breakpoint-small: 500px;
+$breakpoint-medium: 800px;
+$breakpoint-large: 1200px;
+
+$breakpoints: (
+  s: $breakpoint-small,
+  m: $breakpoint-medium,
+  l: $breakpoint-large
+);
 
 /*
  * Typography
@@ -26,7 +31,7 @@ $font-base-size: 16px;
  */
 $color-white: #fff;
 $color-black: #000;
-$color-typography-base: $color--black;
+$color-typography-base: $color-black;
 
 /*
  * Easings
