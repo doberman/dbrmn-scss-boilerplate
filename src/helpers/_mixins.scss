@@ -35,6 +35,16 @@
 }
 
 /*
+ * Typography
+ */
+
+@function rem($size) {
+  $rem-size: $size / $font-base-size;
+
+  @return $rem-size * 1rem;
+}
+
+/*
  * Media queries
  */
 
