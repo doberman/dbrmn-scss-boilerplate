@@ -89,7 +89,7 @@
       @content;
     }
   } @else {
-    @media #{$breakpoint--small-only} {
+    @media #{$breakpoint-small-only} {
       @content;
     }
   }
@@ -101,7 +101,7 @@
       @content;
     }
   } @else {
-    @media #{$breakpoint--medium-only} {
+    @media #{$breakpoint-medium-only} {
       @content;
     }
   }
@@ -113,7 +113,7 @@
       @content;
     }
   } @else {
-    @media #{$breakpoint--medium-and-above} {
+    @media #{$breakpoint-medium-and-above} {
       @content;
     }
   }
