@@ -2,9 +2,6 @@
  * _mixins.scss
  */
 
-/*
- * General mixins
- */
 @mixin clearfix { overflow: hidden; }
 
 /*
@@ -20,7 +17,7 @@
 }
 
 /*
- * Accessibility mixins
+ * Accessibility
  */
 
 /*
@@ -35,4 +32,31 @@
   height: 1px;
   width: 1px;
   overflow: hidden;
+}
+
+/*
+ * Media queries
+ */
+
+@function get-breakpoint-size($size) {
+  @if map-has-key($breakpoints, $size) {
+    $size: map-get($breakpoints, $size);
+  }
+
+  @return $size;
+}
+
+@mixin above($size) {
+  @media (min-width: get-breakpoint-size($size)) { @content; }
+}
+
+@mixin below($size) {
+  @media (max-width: get-breakpoint-size($size)) { @content; }
+}
+
+@mixin between($from-size, $to-size) {
+  $from-size: get-breakpoint-size($from-size);
+  $to-size: get-breakpoint-size($to-size);
+
+  @media (min-width: $to-size) and (max-width: $to-size) { @content; }
 }
