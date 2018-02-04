@@ -1,11 +1,12 @@
 # dbrmn-scss-boilerplate
 
-A structure and boilerplate for projects using [SCSS](http://sass-lang.com/). The purpose
-of the boilerplate is to increase development speed, scalability, and maintainability.
+A structure and boilerplate for projects using [SCSS](http://sass-lang.com/).
+The purpose of the boilerplate is to increase development speed, scalability,
+and maintainability.
 
 ## Structure
-This is a short summary of the structure and responsibility of each file and folder.
-For more details see the header of each file separately.
+This is a short summary of the structure and responsibility of each file and
+folder. For more details see the header of each file separately.
 
 ```
 /styles
@@ -20,9 +21,9 @@ base
 |    |    these can be seen as project opinionated resets.
 |    |
 |    | _typography.scss
-|    |    Contains all our SCSS for general typography, generally we want 'opt-in'
-|    |    typography styles, don't apply styles to typography elements but
-|    |    to classes, i.e. .headline. Specific typography, for example for
+|    |    Contains all our SCSS for general typography, generally we want
+|    |    'opt-in' typography styles, don't apply styles to typography elements
+|    |    but to classes, i.e. .headline. Specific typography, for example for
 |    |    an .article, should reside in /modules/_article.scss.
 |    |
 |    | _variables.scss
@@ -62,16 +63,20 @@ vendor
 ```
 
 ## Stylelint
-We use `stylelint` to ensure a consistent style. See `/src/helpers/_stylelint-example.scss`
-for an example file that adheres to the `/.stylelintrc` rules. To lint manually run
-`npm run lint`, this task is also run before each commit as a pre-commit hook.
+We use `stylelint` to ensure a consistent style. See
+`/src/helpers/_stylelint-example.scss` for an example file that adheres to the
+`/.stylelintrc` rules. To lint manually run `npm run lint`, this task is also
+run before each commit as a pre-commit hook.
 
 ## Gulp
 To compile the SCSS run `npm install && gulp`. This is handy to ensure you don't
 break anything while making changes.
 
 ## Contributing
-Everyone is more than welcome to contribute! More info on how to contribute is available in [CONTRIBUTING.md](CONTRIBUTING.md) (this info is also available when submitting a pull request).
+Everyone is more than welcome to contribute! More info on how to contribute is
+available in [CONTRIBUTING.md](CONTRIBUTING.md) (this info will also be
+available when submitting a pull request).
 
 ## License
-Licensed under the new BSD 3-clause license. See the separate [LICENSE](LICENSE) file.
+Licensed under the new BSD 3-clause license. See the separate [LICENSE](LICENSE)
+file.
