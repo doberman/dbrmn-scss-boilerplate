@@ -69,7 +69,7 @@ We use `stylelint` to ensure a consistent style. See
 run before each commit as a pre-commit hook.
 
 ## Gulp
-To compile the SCSS run `npm install && gulp`. This is handy to ensure you don't
+To compile the SCSS run `npm install && node_modules/.bin/gulp`. This is handy to ensure you don't
 break anything while making changes.
 
 ## Contributing
