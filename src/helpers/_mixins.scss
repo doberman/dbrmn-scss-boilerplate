@@ -2,28 +2,8 @@
  * _mixins.scss
  */
 
-@mixin clearfix { overflow: hidden; }
-
-/*
- * Let's not care about IE6/7,
- * http://www.cssmojo.com/latest_new_clearfix_so_far
- */
-@mixin clearfix-overflow-visible {
-  &:after {
-    content: '';
-    display: table;
-    clear: both;
-  }
-}
-
-/*
- * Accessibility
- */
-
-/*
- * http://a11yproject.com/posts/how-to-hide-content
- * https://developer.yahoo.com/blogs/ydn/clip-hidden-content-better-accessibility-53456.html
- */
+// http://a11yproject.com/posts/how-to-hide-content
+// https://developer.yahoo.com/blogs/ydn/clip-hidden-content-better-accessibility-53456.html
 @mixin visually-hidden {
   position: absolute;
   clip: rect(1px, 1px, 1px, 1px);
@@ -32,28 +12,6 @@
   height: 1px;
   width: 1px;
   overflow: hidden;
-}
-
-/*
- * Typography
- */
-
-@function rem($size) {
-  $rem-size: $size / $font-base-size;
-
-  @return $rem-size * 1rem;
-}
-
-/*
- * Media queries
- */
-
-@function get-breakpoint-size($size) {
-  @if map-has-key($breakpoints, $size) {
-    $size: map-get($breakpoints, $size);
-  }
-
-  @return $size;
 }
 
 @mixin above($size) {
