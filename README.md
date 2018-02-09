@@ -26,10 +26,13 @@ base
 |    |    but to classes, i.e. .headline. Specific typography, for example for
 |    |    an .article, should reside in /modules/_article.scss.
 |    |
-|    | _variables.scss
-|         Contains global project SCSS variables. Variables that are local to a
-|         file should be kept in that file. Namespace the variable with the
-|         concern of the variable, i.e. $color-<color> or $font-<size-default>.
+|    |
+|    variables
+|        \
+|         | This folder contains categories of variables broken up into
+|         | partials, such as _colors.scss or _breakpoints.scss.
+|         | _index.scss acts as a bucket exporter, so import all new partials
+|         | you might add in this file.
 |
 |
 helpers
