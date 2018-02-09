@@ -1,0 +1,17 @@
+/*
+ * helpers/_functions.scss
+ */
+
+@function rem($size) {
+  $rem-size: $size / $font-base-size;
+
+  @return $rem-size * 1rem;
+}
+
+@function get-breakpoint-size($size) {
+  @if map-has-key($breakpoints, $size) {
+    $size: map-get($breakpoints, $size);
+  }
+
+  @return $size;
+}

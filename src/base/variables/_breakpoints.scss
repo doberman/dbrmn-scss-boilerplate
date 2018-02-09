@@ -1,0 +1,13 @@
+/*
+ * base/variables/_breakpoints.scss
+ */
+
+$breakpoint-small: 500px;
+$breakpoint-medium: 800px;
+$breakpoint-large: 1200px;
+
+$breakpoints: (
+  s: $breakpoint-small,
+  m: $breakpoint-medium,
+  l: $breakpoint-large
+);

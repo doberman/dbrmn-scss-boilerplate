@@ -1,32 +1,3 @@
 /*
- * _typography.scss
+ * base/_typography.scss
  */
-
-/* _typography config */
-
-/* _typography default */
-@include default {
-  body {
-    @include base-font(base);
-  }
-}
-
-/* _typography small-only */
-@include small-only {
-
-}
-
-/* _typography medium-only */
-@include medium-only {
-
-}
-
-/* _typography medium-and-above */
-@include medium-and-above {
-
-}
-
-/* _typography large-and-above */
-@include large-and-above {
-
-}

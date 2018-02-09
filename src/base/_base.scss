@@ -1,10 +1,12 @@
 /*
- * _base.scss
- *
- * This is a good place to put 'opinionated' resets.
+ * base/_base.scss
  */
 
-html { box-sizing: border-box; }
+html {
+  font-size: $font-base-size;
+  font-family: $font-base-family;
+  box-sizing: border-box;
+}
 
 body {
   // Set a standardized guaranteed line-height of 1, since the default

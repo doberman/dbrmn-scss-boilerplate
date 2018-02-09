@@ -14,7 +14,7 @@
     "color-hex-length": null,
     "block-no-empty": null,
     "max-line-length": 140,
-    "selector-no-id": true,
+    "selector-max-id": 0,
     "declaration-no-important": true,
     "color-named": "never",
     "value-no-vendor-prefix": true,
@@ -22,6 +22,8 @@
       "ignoreProperties": [
         "backdrop-filter"
       ]
-    }]
+    }],
+    "at-rule-no-unknown": null,
+    "no-descending-specificity": null
   }
 }
