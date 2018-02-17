@@ -18,7 +18,6 @@ gulp.task('sass', () => {
     .pipe($.sass())
     .pipe($.combineMq())
     .pipe($.plumber.stop())
-    .pipe($.connect.reload())
     .pipe(gulp.dest('dist/css'));
 });
 
