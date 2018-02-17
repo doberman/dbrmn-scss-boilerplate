@@ -1,7 +1,8 @@
 /*
-TODO: Grid gutter config per breakpoint?
+TODO: Grid gutter config per breakpoint? Or grid gutter based on number of
+cols?
 
-This seems quite cumbersome. Having to pass a separate config map per breakpoint
+This seems quite cumbersome, having to pass a separate config map per breakpoint
 for each use of grid-col.
 .col {
   @include grid-col(12);
