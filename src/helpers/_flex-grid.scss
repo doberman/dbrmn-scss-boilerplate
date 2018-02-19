@@ -81,13 +81,6 @@ $grid-default-config: (
   margin-left: calc(#{($cols / $grid-cols) * 100%} + #{$gutter / 2});
 }
 
-@mixin grid-pull($cols, $config: ()) {
-  $grid-cols: __get-grid-config($config, columns);
-  $gutter: __get-grid-config($config, gutter);
-
-  margin-right: calc(#{($cols / $grid-cols) * 100%} + #{$gutter / 2});
-}
-
 @mixin grid-generate-classes($config: ()) {
   // Assume "small-viewport-first" and treat smallest breakpoint as default
   $grid-breakpoints: map-remove($breakpoints, s);
@@ -98,7 +91,6 @@ $grid-default-config: (
   @for $i from 1 through $grid-cols {
     .grid-col-#{$i} { @include grid-col($i); }
     .grid-push-#{$i} { @include grid-push($i); }
-    .grid-pull-#{$i} { @include grid-pull($i); }
 
     $prev-bp: s;
     @each $bp, $_ in $grid-breakpoints {
@@ -106,8 +98,6 @@ $grid-default-config: (
         .grid-col-#{$bp}-#{$i} { @include grid-col($i); }
 
         .grid-push-#{$bp}-#{$i} { @include grid-push($i); }
-
-        .grid-pull-#{$bp}-#{$i} { @include grid-pull($i); }
       }
 
       $prev-bp: $bp;
