@@ -1,0 +1,110 @@
+/*
+TODO: Grid gutter config per breakpoint? Or grid gutter based on number of
+cols?
+
+This seems quite cumbersome, having to pass a separate config map per breakpoint
+for each use of grid-col.
+.col {
+  @include grid-col(12);
+  @include above(s) { @include grid-col(6, $grid-m-config); }
+  @include above(m) { @include grid-col(4, $grid-l-config); }
+  @include above(l) { @include grid-col(3, $grid-xl-config); }
+}
+
+Assuming a grid config like this;
+$grid-config: (
+  cols: 12,
+  gutter: (
+    s: 10px,
+    m: 20px,
+    l: 30px,
+    xl: 40px
+  )
+)
+
+Maybe like this?
+.col {
+  @include grid-col(12);
+  @include grid-col(6, m);
+  @include grid-col(4, l);
+  @include grid-col(3, xl);
+}
+
+Or like this?
+.col {
+  @include grid-col(12);
+  @include grid-m-col(6);
+  @include grid-l-col(4);
+  @include grid-xl-col(3);
+}
+*/
+
+$grid-generate-classes: false !default;
+$grid-cols: 12 !default;
+$grid-gutter: 30px !default;
+
+$grid-default-config: (
+  columns: $grid-cols,
+  gutter: $grid-gutter
+) !default;
+
+@function __get-grid-config($grid, $key) {
+  @return map-get(map-merge($grid-default-config, $grid), $key);
+}
+
+@mixin grid-row($config: ()) {
+  $gutter: __get-grid-config($config, gutter);
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: calc(100% + #{$gutter});
+  margin-left: -$gutter / 2;
+  margin-right: -$gutter / 2;
+}
+
+@mixin grid-col($cols, $config: ()) {
+  $grid-cols: __get-grid-config($config, columns);
+  $gutter: __get-grid-config($config, gutter);
+  $col-width: #{($cols / $grid-cols) * 100%};
+
+  flex: 0 0 calc(#{$col-width} - #{$gutter});
+  max-width: calc(#{$col-width} - #{$gutter});
+  margin-left: $gutter / 2;
+  margin-right: $gutter / 2;
+}
+
+@mixin grid-push($cols, $config: ()) {
+  $grid-cols: __get-grid-config($config, columns);
+  $gutter: __get-grid-config($config, gutter);
+
+  margin-left: calc(#{($cols / $grid-cols) * 100%} + #{$gutter / 2});
+}
+
+@mixin grid-generate-classes($config: ()) {
+  // Assume "small-viewport-first" and treat smallest breakpoint as default
+  $grid-breakpoints: map-remove($breakpoints, s);
+  $grid-cols: __get-grid-config($config, columns);
+
+  .grid-row { @include grid-row; }
+
+  @for $i from 1 through $grid-cols {
+    .grid-col-#{$i} { @include grid-col($i); }
+    .grid-push-#{$i} { @include grid-push($i); }
+
+    $prev-bp: s;
+    @each $bp, $_ in $grid-breakpoints {
+      @include above($prev-bp) {
+        .grid-col-#{$bp}-#{$i} { @include grid-col($i); }
+
+        .grid-push-#{$bp}-#{$i} { @include grid-push($i); }
+      }
+
+      $prev-bp: $bp;
+    }
+  }
+}
+
+@if $grid-generate-classes {
+  @include grid-generate-classes;
+}

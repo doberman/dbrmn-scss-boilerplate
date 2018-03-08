@@ -16,8 +16,8 @@ gulp.task('sass', () => {
   return gulp.src(['src/style.scss'])
     .pipe($.plumber(onError))
     .pipe($.sass())
+    .pipe($.combineMq())
     .pipe($.plumber.stop())
-    .pipe($.connect.reload())
     .pipe(gulp.dest('dist/css'));
 });
 
