@@ -49,6 +49,10 @@ $grid-default-config: (
 ) !default;
 
 @function __get-grid-config($grid, $key) {
+  @if type-of($grid) != 'map' {
+    $grid: $grid-default-config;
+  }
+
   @return map-get(map-merge($grid-default-config, $grid), $key);
 }
 
