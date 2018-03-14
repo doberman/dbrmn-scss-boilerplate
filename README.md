@@ -4,6 +4,17 @@ A structure and boilerplate for projects using [SCSS](http://sass-lang.com/).
 The purpose of the boilerplate is to increase development speed, scalability,
 and maintainability.
 
+## Getting Started
+The quickest way to use this boilerplate in your own project is with [degit](https://github.com/Rich-Harris/degit). 
+
+```bash
+npx degit doberman/dbrmn-scss-boilerplate [project-directory]
+```
+
+This will scaffold a project in `project-directory`. If the directory is omitted, the current working directory will be used instead.
+
+Extend the included Gulp file or replace it with your build tool of choice and get coding.
+
 ## Structure
 This is a short summary of the structure and responsibility of each file and
 folder. For more details see the header of each file separately.
