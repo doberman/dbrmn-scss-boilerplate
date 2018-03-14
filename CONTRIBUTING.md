@@ -1,6 +1,6 @@
-# Contributing to Doberman SCSS Framework
+# Contributing to Doberman SCSS Boilerplate
 
-Thanks for contributing to the Doberman SCSS Framework!
+Thanks for contributing to the Doberman SCSS Boilerplate!
 A couple of quick guidelines for submitting pull requests:
 
 - If you're implementing a new feature, even if it's relatively small, it's
