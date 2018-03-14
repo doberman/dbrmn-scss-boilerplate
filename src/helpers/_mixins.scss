@@ -26,5 +26,5 @@
   $from-size: get-breakpoint-size($from-size);
   $to-size: get-breakpoint-size($to-size);
 
-  @media (min-width: $to-size) and (max-width: $to-size) { @content; }
+  @media (min-width: $from-size) and (max-width: $to-size) { @content; }
 }
