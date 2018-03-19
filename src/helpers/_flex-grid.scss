@@ -88,6 +88,11 @@ $grid-default-config: (
 
   .grid-row { @include grid-row; }
 
+  @for $i from 1 through $grid-cols {
+    .grid-col-#{$i} { @include grid-col($i); }
+    .grid-push-#{$i} { @include grid-push($i); }
+  }
+
   $prev-bp: s;
   @each $bp, $_ in $grid-breakpoints {
     @for $i from 1 through $grid-cols {
@@ -99,11 +104,6 @@ $grid-default-config: (
     }
 
     $prev-bp: $bp;
-  }
-
-  @for $i from 1 through $grid-cols {
-    .grid-col-#{$i} { @include grid-col($i); }
-    .grid-push-#{$i} { @include grid-push($i); }
   }
 }
 
